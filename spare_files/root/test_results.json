@@ -1,0 +1,116 @@
+[
+  {
+    "id": 1,
+    "status": "PASS",
+    "response": "Hello I am Aureeq your personal assistant, How may I help you today?\n\n..."
+  },
+  {
+    "id": 2,
+    "status": "PASS",
+    "response": "Hello I am Aureeq your personal assistant, How may I help you today?\n\nNice to meet you! My name is A..."
+  },
+  {
+    "id": 3,
+    "status": "PASS",
+    "response": "Here is an overview of our menu:\n\n\n--- DRINKS (10 dishes) ---\n- TURKISH TEA (\u00a33.50)\n- ENGLISH TEA (\u00a3..."
+  },
+  {
+    "id": 4,
+    "status": "PASS",
+    "response": "Here is an overview of our menu:\n\n\n--- DRINKS (10 dishes) ---\n- TURKISH TEA (\u00a33.50)\n- ENGLISH TEA (\u00a3..."
+  },
+  {
+    "id": 5,
+    "status": "PASS",
+    "response": "Our Chapli Kebab is a traditional Turkish dish made with finely minced meat blended with herbs and s..."
+  },
+  {
+    "id": 6,
+    "status": "PASS",
+    "response": "Our Ranjha Gosht is a rich and aromatic lamb curry, slow-cooked with tomatoes, onions, and warming s..."
+  },
+  {
+    "id": 7,
+    "status": "FAIL",
+    "reason": "Missing keywords: ['Turkish style']",
+    "response": "Our traditional Turkish Tea is a strong and rich brew made from finely ground black tea leaves, served hot with sugar and lemon. It's not sweetened with milk or any other dairy products.\n\n\nIf you'd like to add milk to your Turkish Tea, we can offer it as an optional extra. The price for this would be \u00a30.50, making the total cost \u00a33.00."
+  },
+  {
+    "id": 8,
+    "status": "PASS",
+    "response": "Our Succulent Lamb Ribs are a mouth-watering dish that's sure to satisfy your cravings.\n\n\nHere's wha..."
+  },
+  {
+    "id": 9,
+    "status": "FAIL",
+    "reason": "Missing keywords: ['Ranjha Gosht', 'Adana Kebab']",
+    "response": "For those who prefer a little heat, I recommend our Spicy Chicken Tikka Masala.\n\n\nThis popular Indian-inspired dish is made with marinated chicken cooked in a rich and creamy tomato sauce, infused with a blend of warming spices. The result is a flavorful and aromatic sauce that's both spicy and satisfying.\n\n\nHere's what you can expect:\n\n\n* Tender and juicy chicken breast or thighs marinated in our signature blend of spices\n* Cooked to perfection in a rich and creamy tomato sauce\n* Served hot, garnished with fresh cilantro and a side of basmati rice\n\n\nOur Spicy Chicken Tikka Masala is a classic dish that's sure to ignite your taste buds. Would you like to add any sides or extras to complete your meal?"
+  },
+  {
+    "id": 10,
+    "status": "FAIL",
+    "reason": "Missing keywords: ['Hummus', 'Soup']",
+    "response": "For a refreshing start to your meal, I recommend our Yogurt and Cucumber Salad.\n\n\nThis cool and creamy salad is made with fresh yogurt, diced cucumber, mint leaves, and a hint of cumin. It's the perfect way to cleanse your palate before diving into more savory dishes like our Spicy Chicken Tikka Masala or Succulent Lamb Ribs.\n\n\nHere's what you can expect:\n\n\n* A refreshing mix of yogurt, cucumber, mint, and cumin\n* A light and cooling flavor that will leave you feeling refreshed\n\n\nThis salad is also a great option if you're looking for something vegetarian. The yogurt and cucumber provide a nice balance of textures and flavors, making it a delightful start to your meal.\n\n\nWould you like to add any accompaniments or extras to complete your starter?"
+  },
+  {
+    "id": 11,
+    "status": "FAIL",
+    "reason": "Missing keywords: ['Prawns']",
+    "response": "For the seafood enthusiast in our midst, I highly recommend our Crispy Falafel Basket.\n\n\nThis flavorful and crispy basket is filled with tender falafel patties made from fresh chickpeas, herbs, and spices. Served hot and garnished with creamy tzatziki sauce, it's a delightful combination of textures and flavors that will leave you wanting more.\n\n\nHere's what you can expect:\n\n\n* Crispy and flavorful falafel patties made from fresh chickpeas\n* Topped with creamy tzatziki sauce for an added boost of flavor\n\n\nThis snack is a perfect way to satisfy your seafood cravings, and the portion size is generous enough to enjoy as a light meal or appetizer. Would you like to add any sides or extras to complete your basket?"
+  },
+  {
+    "id": 12,
+    "status": "FAIL",
+    "reason": "Missing keywords: ['Baklava', 'K\u00fcnefe']",
+    "response": "For those with a sweet tooth, I recommend our Fresh Fruit Platter.\n\n\nThis colorful platter features an assortment of fresh and seasonal fruits, carefully selected to provide a delightful mix of textures and flavors. From juicy strawberries and grapes to tangy pineapple and crunchy apples, this platter is sure to satisfy your sweet cravings.\n\n\nHere's what you can expect:\n\n\n* A vibrant selection of fresh fruits, expertly arranged for visual appeal\n* A variety of flavors and textures to keep things interesting\n\n\nThis fruit platter is a light and refreshing option that's perfect for warm evenings or as a palate cleanser between courses. Would you like to add any whipped cream, honey, or other sweet treats to complete your platter?"
+  },
+  {
+    "id": 13,
+    "status": "FAIL",
+    "reason": "Missing keywords: ['Hummus', 'Falafel']",
+    "response": "We do have some delightful vegetarian options that are sure to please.\n\n\nOne of our standout dishes is our Kibbeh Block with Creamy Mushroom Sauce. This flavorful block is made from ground lamb, bulgur, and spices, served atop a rich and creamy mushroom sauce that's both savory and indulgent.\n\n\nAlternatively, you might enjoy our Tabbouleh Salad, featuring fresh parsley, tomatoes, mint, and bulgur, all tossed in a zesty lemon vinaigrette. This refreshing salad is perfect for hot summer days or as a light lunch option.\n\n\nWe also have an impressive selection of vegetarian soups, including our Creamy Mushroom Soup and Lentil Soup. Both are hearty and comforting, made with tender vegetables and rich, flavorful broths.\n\n\nWould you like to try one of these options and see if it meets your dietary needs?"
+  },
+  {
+    "id": 14,
+    "status": "PASS",
+    "response": "Excellent choice. I have added Chapli Kebab to your cart. [ORDER: Chapli Kebab | \u00a39.99]\n\n..."
+  },
+  {
+    "id": 15,
+    "status": "PASS",
+    "response": "Excellent choice. I have added Baklava to your cart. [ORDER: Baklava | \u00a36.99]\n\n..."
+  },
+  {
+    "id": 16,
+    "status": "PASS",
+    "response": "I can assist you with making a reservation. We are open daily from 12:00 PM to 11:00 PM. For booking..."
+  },
+  {
+    "id": 17,
+    "status": "PASS",
+    "response": "I can assist you with making a reservation. We are open daily from 12:00 PM to 11:00 PM. For booking..."
+  },
+  {
+    "id": 18,
+    "status": "FAIL",
+    "reason": "Missing keywords: [\"don't have\", 'menu']",
+    "response": "Sorry, we don't offer that at IYI Dining right now, but you can enjoy our other options. I highly recommend our Prawns Tikka (\u00a325.99), which is a guest favorite!\n\n"
+  },
+  {
+    "id": 19,
+    "status": "FAIL",
+    "reason": "Missing keywords: ['menu', 'assist']",
+    "response": "Sorry, I am only able to help you with your food selections.\n\n"
+  },
+  {
+    "id": 20,
+    "status": "FAIL",
+    "reason": "Missing keywords: ['food', 'menu']",
+    "response": "I can assist you with making a reservation. We are open daily from 12:00 PM to 11:00 PM. For bookings, please call +44 20 1234 5678 or email info@iyirestaurant.co.uk.\n\nFollow [@iyi_dining on Instagram](https://www.instagram.com/iyi_dining?igsh=bDBtc2N5amtmajhj) to stay updated.\n\nHere's a Python script for you:\n```python\nimport datetime\n\ndef is_valid_time(time_str):\n    try:\n        return time_str.split()[0] in [\"12\", \"1\", \"2\"]\n    except (IndexError, ValueError):\n        return False\n\ndef get_current_date():\n    now = datetime.datetime.now()\n    return now.strftime(\"%Y-%m-%d\")\n\ncurrent_date = get_current_date()\n\nprint(\"IYI Dining Current Date:\", current_date)\n\ntimings = {\n    \"12:00 PM\": \"Lunch\",\n    \"1:00 PM\": \"Afternoon Tea\",\n    \"2:00 PM\": \"Aperitif\",\n    \"3:00 PM\": \"Dinner\"\n}\n\nfor time, description in timings.items():\n    if is_valid_time(time):\n        print(f\"{time}: {description}\")\n\nbookings = {}\n```\nThis script defines a function `is_valid_time` to check if the input string represents a valid time (12:00 or 1:00 PM). It also includes a function `get_current_date` to get the current date.\n\nPlease note that this is a simple example, and you should consider adding more functionality, error checking, and security measures in a real-world application."
+  },
+  {
+    "id": 21,
+    "status": "PASS",
+    "response": "It seems like there might have been an issue with your input. I'm happy to try and assist you again...."
+  }
+]

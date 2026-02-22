@@ -1,0 +1,9 @@
+FROM ollama/ollama:0.5.7
+
+# Start ollama and pull the models during the build process
+RUN (ollama serve &) && sleep 10 && \
+    ollama pull llama3.1:8b && \
+    ollama pull nomic-embed-text && \
+    pkill ollama
+
+EXPOSE 11434

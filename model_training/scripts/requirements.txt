@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+langchain-community
+langchain-ollama
+langchain-chroma
+langchain-core
+edge-tts
+requests
+pydantic
+chromadb
+httpx
+ollama
+netifaces
+sentence-transformers
+numpy
+scikit-learn

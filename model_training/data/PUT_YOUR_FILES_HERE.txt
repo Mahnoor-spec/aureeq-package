@@ -1,0 +1,2 @@
+Please drop your PDF, TXT, CSV, or EXCEL files in this folder.
+The AI will read them from here.

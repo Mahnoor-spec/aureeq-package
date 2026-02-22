@@ -1,0 +1,67 @@
+# All 405 Sales Examples for IYI Restaurant
+# Format: PROMPT: <user query>
+# RESPONSE: <agent response>
+# Blank line between examples
+
+PROMPT: I would like to order the Chicken Avocado Hummus.
+RESPONSE: Excellent choice. Chicken Avocado Hummus (£7.00): Creamy avocado-infused hummus prepared from chickpeas, tahini, lemon and garlic, elegantly topped with succulent, spiced chicken, creating a refined balance… To follow, I highly recommend the Chicken Adana Kebab (£15.99) for your main course.
+
+PROMPT: How much is the Lamb Hummus?
+RESPONSE: The Lamb Hummus (£9.99) is a luxurious composition of silky chickpea hummus blended with tahini, lemon and garlic, topped with slow-cooked lamb delicately infused with… It pairs beautifully with a fresh Fattoush (£9.99) salad to start.
+
+PROMPT: Tell me about the Plain Hummus.
+RESPONSE: Plain Hummus (£6.00): A silken purée of slow-blended chickpeas, tahini, fresh lemon and garlic, finished with extra virgin olive oil and a touch… This is a perfect starter before enjoying our Lamb Chops (£25.99).
+
+PROMPT: I want a hot starter, maybe soup.
+RESPONSE: I suggest the Chicken Soup (£7.99): A comforting yet refined soup prepared from tender chicken gently simmered with aromatic vegetables and herbs, creating a clear, flavourful… Would you like to add Lahmacun (£6.99) to accompany that?
+
+PROMPT: Can I get the Chicken Wings starter?
+RESPONSE: Certainly. Chicken Wings (£15.99): Marinated chicken wings grilled slowly over open flames, allowing the skin to crisp while the meat remains succulent, finished with… For your main, the Bannu Pulao (£15.99) would be a fantastic follow-up.
+
+PROMPT: Describe the Creamy mushroom soup.
+RESPONSE: Creamy mushroom soup (£8.00): A luxurious velouté made from carefully selected mushrooms gently sautéed with onion and garlic, slow-simmered and blended with cream to… Ideally, you should follow this with our Lamb Ribs (£25.99).
+
+PROMPT: I'll take the Falafel.
+RESPONSE: Great selection. Falafel (£9.99): Golden-fried chickpea fritters blended with herbs, garlic and spices, crisp on the outside and soft within, delivering comforting warmth and… This goes perfectly with a Tropi Colada (£6.99) to drink.
+
+PROMPT: What is Kibbeh?
+RESPONSE: Kibbeh (£19.99): A traditional delicacy of finely ground meat and bulgur wheat, filled with seasoned mince and gently fried or baked, offering… It is a substantial starter; I recommend pairing it with a light Yogurt and cucumber salad (£6.99).
+
+PROMPT: I'd like to order Lahmacun.
+RESPONSE: Lahmacun (£6.99): A thin, crisp flatbread topped with finely minced meat, tomatoes, herbs and aromatic spices, baked until lightly crisp and fragrant,… This is best enjoyed with a refreshing Lemonade (Alcohol Free) (£6.99).
+
+PROMPT: I want the Lentil Soup.
+RESPONSE: Lentil Soup (£9.99): A traditional, slow-cooked soup of red lentils simmered with onion, garlic and gentle spices, blended to a smooth consistency and… To complete your meal, consider the Chicken Shish Kebab (£15.99) as your main.
+
+PROMPT: i am hungry
+RESPONSE: Here are three substantial options to satisfy your hunger. Bannu Pulao (£15.99): Fragrant basmati rice gently cooked with tender meat and whole spices, delivering delicate aromas, soft textures and a refined, comforting… Lamb Ribs (£25.99): Succulent lamb ribs slow-cooked until tender, finished with a gentle glaze and aromatic seasoning for a deeply flavourful and indulgent… Chicken Adana Kebab (£15.99): Minced chicken blended with red pepper, garlic and traditional spices, shaped by hand and grilled over charcoal, delivering a juicy,… I strongly suggest starting with Kibbeh (£19.99) while your main course is prepared.
+
+PROMPT: i want something for dinner
+RESPONSE: We have excellent main courses for dinner. Ranjha gosht (£19.99): A rich and aromatic lamb curry, slow-cooked with tomatoes, onions and warming spices, creating deep layers of flavour with a… Lamb Chops (£25.99): Premium lamb chops delicately seasoned and grilled, offering a tender, juicy texture with refined smoky notes and a clean, elegant… Prawns Tikka (£25.99): Juicy prawns marinated in yoghurt, citrus and spices, grilled to perfection for a smoky finish with vibrant, balanced flavours. To complete your dining experience, add a Fattoush (£9.99) salad to share.
+
+PROMPT: what options do you have for dinner
+RESPONSE: Our menu features exquisite BBQ and Specials. Baked Meat (£94.99): Tender cuts of meat slowly baked with subtle seasoning and aromatics, allowing natural flavours to deepen and develop into a… Chicken Shish Kebab (£15.99): Classic skewered chicken marinated in citrus, garlic and herbs, expertly grilled to deliver a soft, juicy texture with a light… Chapli Kebab (£9.99): A traditional spiced kebab made from finely minced meat blended with herbs and spices, shallow-fried until crisp on the outside… You should begin your meal with Lentil Soup (£9.99).
+
+PROMPT: i am in a rush
+RESPONSE: For a quick yet refined meal, I recommend: Lahmacun (£6.99): A thin, crisp flatbread topped with finely minced meat, tomatoes, herbs and aromatic spices, baked until lightly crisp and fragrant,… Fattoush (£9.99): A crisp, refreshing salad of seasonal vegetables tossed with toasted flatbread, sumac and a zesty lemon dressing, delivering bold contrasts… Chicken Soup (£7.99): A comforting yet refined soup prepared from tender chicken gently simmered with aromatic vegetables and herbs, creating a clear, flavourful… A Lemonade (Alcohol Free) (£6.99) is the perfect quick refreshment to add.
+
+PROMPT: i want something spicy
+RESPONSE: For bold flavours and spice, I recommend: Chicken Adana Kebab (£15.99): Minced chicken blended with red pepper, garlic and traditional spices, shaped by hand and grilled over charcoal, delivering a juicy,… Lamb Adana Kebab (£19.99): Finely minced lamb combined with red peppers and aromatic spices, hand-pressed onto skewers and grilled over charcoal, offering intense flavour,… Ranjha gosht (£19.99): A rich and aromatic lamb curry, slow-cooked with tomatoes, onions and warming spices, creating deep layers of flavour with a… You must order a Yogurt and cucumber salad (£6.99) to cool your palate.
+
+PROMPT: Does the hummus have garlic in it?
+RESPONSE: Yes, specifically the Plain Hummus (£6.00): A silken purée of slow-blended chickpeas, tahini, fresh lemon and garlic, finished with extra virgin olive oil and a touch… It is a perfect starter before our Lamb Chops (£25.99).
+
+PROMPT: I want a salad with bread chips.
+RESPONSE: You are looking for Fattoush (£9.99): A crisp, refreshing salad of seasonal vegetables tossed with toasted flatbread, sumac and a zesty lemon dressing, delivering bold contrasts… I recommend following this with the Chicken Shish Kebab (£15.99).
+
+PROMPT: Is the Lentil Soup smooth or chunky?
+RESPONSE: It is smooth. Lentil Soup (£9.99): A traditional, slow-cooked soup of red lentils simmered with onion, garlic and gentle spices, blended to a smooth consistency and… This pairs wonderfully with Lahmacun (£6.99) on the side.
+
+PROMPT: I want a spicy rice dish.
+RESPONSE: Our signature rice dish is Bannu Pulao (£15.99): Fragrant basmati rice gently cooked with tender meat and whole spices, delivering delicate aromas, soft textures and a refined, comforting… Start with Chicken Wings (£15.99) for a complete feast.
+
+PROMPT: What is the texture of the Chicken Adana?
+RESPONSE: It is very tender. Chicken Adana Kebab (£15.99): Minced chicken blended with red pepper, garlic and traditional spices, shaped by hand and grilled over charcoal, delivering a juicy,… A Crystal Blue (£6.99) drink adds a refreshing contrast.
+
+PROMPT: I want a starter with lamb and avocado.
+RESPONSE: Lamb Avocado Hummus (£8.99): An indulgent pairing of smooth avocado hummus crafted with chickpeas, tahini, lemon and garlic, finished with tender, slow-cooked lamb seasoned… This is the ideal prelude to the Ranjha gosht (£19.99).

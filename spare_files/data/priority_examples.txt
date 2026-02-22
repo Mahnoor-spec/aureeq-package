@@ -1,0 +1,117 @@
+User: I want something light to start with.
+Agent: I recommend beginning with our Cold Mezze.
+
+Plain Hummus (£6.00): A silken purée of slow-blended chickpeas, tahini, fresh lemon and garlic, finished with extra virgin olive oil and a touch…
+
+Plain Avocado Hummus (£7.00): A contemporary expression of hummus, where chickpeas are finely blended with ripe avocado, tahini, lemon and garlic, resulting in a…
+
+Tabbouleh (£7.99): A vibrant Levantine salad of finely chopped parsley, fresh mint, tomatoes and bulgur, dressed with lemon juice and olive oil,…
+To elevate your meal, I'd suggest pairing this with a Chicken Shish Kebab (£15.99) as a main.
+
+---
+
+User: Show me three cold mezze options.
+Agent: Certainly. Here are three refined Cold Mezze selections:
+
+Chicken Avocado Hummus (£7.00): Creamy avocado-infused hummus prepared from chickpeas, tahini, lemon and garlic, elegantly topped with succulent, spiced chicken, creating a refined balance…
+
+Chicken Hummus (£5.00): Velvety hummus made from chickpeas, tahini, lemon and garlic, crowned with tender chicken gently marinated and sautéed with warming spices,…
+
+Lamb Hummus (£9.99): A luxurious composition of silky chickpea hummus blended with tahini, lemon and garlic, topped with slow-cooked lamb delicately infused with…
+These pair exceptionally well with our Lamb Shish Kebab (£19.99) for a complete experience.
+
+---
+
+User: I only want a starter for now.
+Agent: That's a great way to begin. I recommend:
+
+Falafel (£9.99): Golden-fried chickpea fritters blended with herbs, garlic and spices, crisp on the outside and soft within, delivering comforting warmth and…
+
+Fattoush (£9.99): A crisp, refreshing salad of seasonal vegetables tossed with toasted flatbread, sumac and a zesty lemon dressing, delivering bold contrasts…
+
+Lentil Soup (£9.99): A traditional, slow-cooked soup of red lentils simmered with onion, garlic and gentle spices, blended to a smooth consistency and…
+Many guests enjoy following this with a Chicken Adana Kebab (£15.99) when ready.
+
+---
+
+User: I'm craving something warm as a starter.
+Agent: In that case, I'd suggest our Hot Mezze:
+
+Chicken Soup (£7.99): A comforting yet refined soup prepared from tender chicken gently simmered with aromatic vegetables and herbs, creating a clear, flavourful…
+
+Creamy Mushroom Soup (£8.00): A luxurious velouté made from carefully selected mushrooms gently sautéed with onion and garlic, slow-simmered and blended with cream to…
+
+Kibbeh (£19.99): A traditional delicacy of finely ground meat and bulgur wheat, filled with seasoned mince and gently fried or baked, offering…
+These lead beautifully into our Lamb Kebab Barg (£19.99).
+
+---
+
+User: I want only salad.
+Agent: Excellent choice for freshness.
+
+Fattoush (£9.99): A crisp, refreshing salad of seasonal vegetables tossed with toasted flatbread, sumac and a zesty lemon dressing, delivering bold contrasts…
+
+Tabbouleh (£7.99): A vibrant Levantine salad of finely chopped parsley, fresh mint, tomatoes and bulgur, dressed with lemon juice and olive oil,…
+
+Yogurt and Cucumber Salad (£6.99): Cool, creamy yoghurt blended with fresh cucumber, garlic and herbs, lightly seasoned to create a refreshing and perfectly balanced accompaniment…
+If you'd like something more filling, a Chicken Kebab Barg (£15.99) complements these perfectly.
+
+---
+
+User: I want something filling for dinner.
+Agent: For a satisfying main, I recommend:
+
+Lamb Chops (£25.99): Premium lamb chops delicately seasoned and grilled, offering a tender, juicy texture with refined smoky notes and a clean, elegant…
+
+Lamb Ribs (£25.99): Succulent lamb ribs slow-cooked until tender, finished with a gentle glaze and aromatic seasoning for a deeply flavourful and indulgent…
+
+Chicken Adana Kebab (£15.99): Minced chicken blended with red pepper, garlic and traditional spices, shaped by hand and grilled over charcoal, delivering a juicy,…
+Starting with Lahmacun (£6.99) is a popular choice before these mains.
+
+---
+
+User: I only want chicken items.
+Agent: Absolutely. Here are excellent chicken selections:
+
+Chicken Shish Kebab (£15.99): Classic skewered chicken marinated in citrus, garlic and herbs, expertly grilled to deliver a soft, juicy texture with a light…
+
+Chicken Wings (£15.99): Marinated chicken wings grilled slowly over open flames, allowing the skin to crisp while the meat remains succulent, finished with…
+
+Chicken Kebab Barg (£15.99): Tender pieces of chicken breast marinated in aromatic herbs, garlic and olive oil, grilled slowly to preserve juiciness while developing…
+To round it off, a CRYSTAL BLUE (£6.99) is a refreshing pairing.
+
+---
+
+User: I'm ordering dessert only.
+Agent: A lovely way to finish your meal.
+
+Baklava (£6.99): Delicate layers of crisp filo pastry filled with finely ground nuts, baked until golden and finished with light aromatic syrup,…
+
+KÜNEFE (£6.99): A warm Middle Eastern delicacy of crisp, golden shredded pastry layered with soft, molten cheese, gently baked and finished with…
+
+Baklava (£6.99): Delicate layers of crisp filo pastry filled with finely ground nuts, baked until golden and finished with light aromatic syrup,…
+To enhance the experience, I highly recommend pairing this with TURKISH TEA (£3.50) or CAPPUCCINO (£4.50).
+
+---
+
+User: Suggest three drinks.
+Agent: Certainly, here are refreshing drink options:
+
+RUBY MINT (£6.99): Fresh strawberries blended with cooling mint and subtle sweetness, served chilled for a refreshing balance of bright fruit and herbal…
+
+MELON TWIST (£6.99): A refreshing blend of ripe melon and fresh citrus, lightly sweetened and served chilled, offering a smooth, cooling finish with…
+
+TROPI COLADA (£6.99): A smooth, tropical blend of ripe pineapple and creamy coconut, delicately balanced and served chilled for a rich yet refreshing…
+These pair beautifully with Baklava (£6.99) for a complete dessert course.
+
+---
+
+User: I want something special.
+Agent: For something truly distinctive, I recommend our IYI Specials:
+
+Bannu Pulao (£15.99): Fragrant basmati rice gently cooked with tender meat and whole spices, delivering delicate aromas, soft textures and a refined, comforting…
+
+Chapli Kebab (£9.99): A traditional spiced kebab made from finely minced meat blended with herbs and spices, shallow-fried until crisp on the outside…
+
+Ranjha Gosht (£19.99): A rich and aromatic lamb curry, slow-cooked with tomatoes, onions and warming spices, creating deep layers of flavour with a…
+Starting with Lentil Soup (£9.99) enhances the journey.

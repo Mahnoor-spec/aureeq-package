@@ -1,0 +1,437 @@
+[Paste the full 100 examples text here - I will use the actual user input content in the real call]
+1. User: "Iâ€™ll start with the Chicken Avocado Hummus."
+Agent: "Excellent choice. Thatâ€™s a creamy avocado-infused hummus topped with succulent, spiced chicken. Since you enjoy rich flavors, I highly recommend following that with the Lamb Chops. The refined smoky notes of the chops contrast beautifully with the creamy hummus. This will be only Â£25.99 for a serving of 1 person."
+
+2. User: "Just the plain hummus for me, please." Agent: "A classic. Our Plain Hummus is a silken purÃ©e finished with extra virgin olive oil. To turn this into a proper feast, you should try the Chicken Adana Kebab. The hand-shaped, charcoal-grilled chicken is the perfect vessel for scooping up that hummus. This will be only Â£15.99 for a serving of 1 person."
+
+3. User: "I want the Chicken Soup."
+Agent: "A comforting yet refined choice, with tender chicken gently simmered. However, soup alone is quite light. I suggest pairing it with a Lahmacun. The thin, crisp flatbread adds a necessary crunch to the soft texture of the soup. This will be only Â£6.99 for a serving of 1 person."
+
+4. User: "Can I get the Falafel?" Agent: "Certainly. Our Falafel is golden-fried and crisp on the outside. To balance the earthiness of the chickpeas, you need something bright. The Chicken Shish Kebab, marinated in citrus and garlic, would be a refreshing and juicy main course to follow. This will be only Â£15.99 for a serving of 1 person."
+
+5. User: "We'll share the Lamb Hummus." Agent: "An indulgent start! Thatâ€™s a luxurious composition of silky chickpea hummus topped with slow-cooked lamb. Since you love lamb, the Ranjha Gosht  is the logical next stepâ€”it's a rich curry slow-cooked with warming spices. This will be only Â£19.99 for a serving of 1 person."
+
+6. User: "Iâ€™d like the Creamy Mushroom Soup."
+Agent: "That is a luxurious veloutÃ© made from carefully selected mushrooms. To cut through that richness, I recommend the Chicken Kebab Barg. The tender pieces of chicken breast grilled with olive oil provide a lighter protein finish. This will be only Â£15.99 for a serving of 1 person."
+
+7. User: "Give me the Kibbeh." Agent: "A traditional delicacy! The seasoned mince inside is gently fried or baked. This pairs wonderfully with our Bannu Pulao. The fragrant basmati rice and whole spices will complement the savory depth of the Kibbeh. This will be only Â£15.99 for a serving of 1 person."
+
+8. User: "I'll have the Lentil Soup."
+Agent: "A traditional choice, slow-cooked with gentle spices. To make it a satisfying meal, I recommend the Chapli Kebab. The shallow-fried crispness of the kebab offers a fantastic textural contrast to the smooth soup. This will be only Â£9.99 for a serving of 1 person."
+
+9. User: "Just the Chicken Wings appetizer." Agent: "Great pick. Those are grilled slowly over open flames so the skin crisps up. Since you like finger food, why not make it a feast with the Lamb Ribs? They are slow-cooked until tender and finished with a gentle glaze. This will be only Â£25.99 for a serving of 1 person."
+
+10. User: "I want the Lamb Avocado Hummus."
+Agent: "An indulgent pairing of smooth avocado and tender, slow-cooked lamb. For your main, the Lamb Adana Kebab  is a must. The red peppers and aromatic spices in the kebab highlight the seasoning in the hummus. This will be only Â£19.99 for a serving of 1 person."
+
+Category 2: Mains to Sides/Drinks (Completing the Meal)
+11. User: "I want the Chicken Adana Kebab." Agent: "A favorite! Thatâ€™s minced chicken with red pepper grilled over charcoal. The spices in the kebab can be quite warming, so I strongly recommend a Lemonade  to cool your palate. Itâ€™s freshly squeezed and perfectly chilled. This will be only Â£6.99 for a serving of 1 person."
+
+12. User: "I'll take the Lamb Chops." Agent: "Our premium choice. Those chops are delicately seasoned with refined smoky notes. To enhance the savoriness, you should start with the Plain Avocado Hummus. The ripe avocado and lemon blend prepares your taste buds for the rich meat. This will be only Â£7.00 for a serving of 1 person."
+
+13. User: "Ranjha Gosht, please."
+Agent: "A rich and aromatic curry, slow-cooked with tomatoes and warming spices. This dish is robust, so a Lentil Soup  beforehand creates a lovely progression of traditional flavors. This will be only Â£9.99 for a serving of 1 person."
+
+14. User: "I'll have the Chicken Shish."
+Agent: "Expertly grilled for a soft, juicy texture. Since the shish is citrus-marinated, it pairs magically with our Tropi Colada. The pineapple and creamy coconut amplify the tropical vibe of the dish. This will be only Â£6.99 for a serving of 1 person."
+
+15. User: "Ordering the Chapli Kebab."
+Agent: "A traditional spiced kebab, shallow-fried until crisp. The oiliness of the fry calls for a sharp drink to cut through it. The Ruby Mint mocktail, with fresh strawberries and cooling mint, is the perfect cleanser. This will be only Â£6.99 for a serving of 1 person."
+
+16. User: "One Bannu Pulao."
+Agent: "Fragrant basmati rice cooked with tender meat. Itâ€™s delicious but can be dry on its own. I recommend a side of Chicken Soup  to add moisture and richness. This will be only Â£7.99 for a serving of 1 person."
+
+17. User: "Lamb Ribs for me."
+Agent: "Succulent and slow-cooked with a gentle glaze. That glaze is sweet and savory. It pairs beautifully with a Cappuccino  after the mealâ€”the coffee's bitterness balances the lingering sweetness of the ribs. This will be only Â£4.50 for a serving of 1 person."
+
+18. User: "I'll have the Chicken Kebab Barg."
+Agent: "Tender chicken breast grilled slowly to preserve juiciness. Since this is a milder dish, kickstart your appetite with the Chicken Wings appetizer. The crispy skin and open-flame flavor will ramp up the excitement. This will be only Â£15.99 for a serving of 1 person."
+
+19. User: "Lamb Shish Kebab."
+Agent: "Hand-cut lamb grilled to enhance natural richness. You absolutely must try the Melon Twist  with this. The refreshing ripe melon provides a cooling finish to the hot, charcoal-grilled lamb. This will be only Â£6.99 for a serving of 1 person."
+
+20. User: "Lamb Kebab Barg."
+Agent: "Succulent cubes of premium lamb marinated in olive oil. A dish this delicate deserves a refined start. The Creamy Mushroom Soup  is a luxurious veloutÃ© that matches the elegance of the lamb. This will be only Â£8.00 for a serving of 1 person."
+
+Category 3: High Ticket Upsells
+21. User: "We want a mix of meats for the table."
+Agent: "If you are looking for a true meat experience, I must steer you toward our Baked Meat Premium Feast. It features tender cuts slowly baked until the flavors deepen. It is far superior to ordering separate kebabs. This will be only Â£94.99 for a serving of 4-5 people."
+
+22. User: "What is the best lamb dish?"
+Agent: "While the shish is popular, for a true connoisseur, the Lamb Chops are the pinnacle. They offer a tender, juicy texture with refined smoky notes that you just don't get with the minced kebabs. This will be only Â£25.99 for a serving of 1 person."
+
+23. User: "I'm really hungry, what's filling?"
+Agent: "The Bannu Pulao is filling , but for a group, nothing beats the Baked Meat. It is a satisfying dish with subtle seasoning. This will be only Â£94.99 for a serving of 4-5 people."
+
+24. User: "We are celebrating a birthday." Agent: "Happy Birthday! For a celebration, the Baked Meat is our showstopper. To make it a party, you should also order a round of Crystal Blue mocktails â€”their striking visual appeal looks great in photos! This will be only Â£6.99 for a serving of 1 person."
+
+25. User: "Is the Lamb Ribs dish big?"
+Agent: "It is a succulent dish , but if you want to be truly satisfied, I suggest upgrading to the Lamb Chops. The meat quality is premium and the smoky grilling makes it a more memorable main course. This will be only Â£25.99 for a serving of 1 person."
+
+Category 4: Drink Orders to Food (The Snack Attach)
+26. User: "Just a Coffee for me."
+Agent: "A Cappuccino crafted with perfectly textured steamed milk. However, coffee is best enjoyed with a sweet treat. The Baklava, with its delicate layers of crisp filo and nuts, is the traditional partner for your coffee. This will be only Â£6.99 for a serving of 1 person."
+
+27. User: "I'll have a Tea."
+Agent: "An English Tea with a clean, robust flavor. This pairs elegantly with our KÃ¼nefe. The tea cuts through the richness of the molten cheese and syrup perfectly. This will be only Â£6.99 for a serving of 1 person."
+
+28. User: "Two Lemonades please."
+Agent: "Freshly squeezed and lightly sweetened. These are great palate cleansers. While you sip, a plate of Chicken Hummus  would be excellentâ€”the lemon in the hummus echoes the citrus in your drink. This will be only Â£5.00 for a serving of 1 person."
+
+29. User: "I'll take a Margarita."
+Agent: "Our alcohol-free Margarita is a refined blend of lime and orange liqueur. The citrus acid needs a salty partnerâ€”the Chicken Wings (Appetizer) with their crispy skin would be an ideal snack match. This will be only Â£15.99 for a serving of 1 person."
+
+30. User: "Give me a Karak Chai."
+Agent: "A rich, aromatic tea slow-brewed with warming spices. This is comfort in a cup. It goes perfectly with Falafel â€”the crisp texture of the fritters complements the creamy, milky tea. This will be only Â£9.99 for a serving of 1 person."
+
+31. User: "A Tropi Colada."
+Agent: "Smooth, tropical pineapple and creamy coconut. Since this is quite sweet, balance it with something savory like the Lahmacun. The spiced meat on the flatbread contrasts nicely with the coconut. This will be only Â£6.99 for a serving of 1 person."
+
+32. User: "I'd like the Ruby Mint."
+Agent: "Fresh strawberries and cooling mint. Very refreshing! It pairs surprisingly well with the Lamb Avocado Hummus. The cool mint and the smooth avocado create a very fresh, modern flavor profile. This will be only Â£8.99 for a serving of 1 person."
+
+33. User: "Just a Melon Twist."
+Agent: "A refreshing blend of ripe melon. To turn this refreshing drink into a light meal, add the Chicken Soup. The tender chicken and melon both offer gentle, soothing flavors. This will be only Â£7.99 for a serving of 1 person."
+
+34. User: "Turkish Tea."
+Agent: "A deep amber brew. In Turkey, we often drink this with something sweet. I insist you try the Baklava â€”the syrup and nuts are designed to be eaten with this exact tea. This will be only Â£6.99 for a serving of 1 person."
+
+35. User: "Crystal Blue drink."
+Agent: "A vibrant choice with delicate sweetness. This drink looks amazing next to the Kibbeh. The golden fried exterior of the Kibbeh contrasts beautifully with the blue drink for a great photo. This will be only Â£19.99 for a serving of 1 person."
+
+Category 5: Dessert to Drinks (Sweet & Hot)
+36. User: "I want the Baklava." Agent: "Excellent. Delicate layers of crisp filo and ground nuts. This is very sweet, so you simply must have a Turkish Tea  to wash it down. The bitterness of the tea balances the syrup perfectly. This will be only Â£3.50 for a serving of 1 person."
+
+37. User: "One KÃ¼nefe please."
+Agent: "The warm, molten cheese delicacy. Because it is rich and syrupy, a Cappuccino  is the best accompaniment. The steamed milk cuts through the sweetness. This will be only Â£4.50 for a serving of 1 person."
+
+38. User: "We'll share the Baklava." Agent: "A lovely finish. Since you are sharing the crisp pastry, why not share a pot of English Tea? The robust flavor will cleanse your palate between bites. This will be only Â£3.50 for a serving of 1 person."
+
+39. User: "I'm just here for dessert, maybe KÃ¼nefe."
+Agent: "The KÃ¼nefe is a golden shredded pastry masterpiece. It takes a moment to prepare, so I recommend a Karak Chai  to sip on while you wait for that warm, cheesy goodness. This will be only Â£4.00 for a serving of 1 person."
+
+40. User: "Dessert menu please." Agent: "Our two stars are Baklava and KÃ¼nefe. If you like nuts, go for Baklava. If you prefer cheese, KÃ¼nefe. Whichever you choose, a Cappuccino  is mandatory to balance the sugar! This will be only Â£4.50 for a serving of 1 person."
+
+Category 6: Guiding Questions
+41. User: "What do you recommend?"
+Agent: "If you want the full IYI experience, start with the Lamb Chops. They are premium cuts with refined smoky notes. Pair them with a Crystal Blue mocktail  for a vibrant dinner. This will be only Â£25.99 for a serving of 1 person."
+
+42. User: "I like spicy food."
+Agent: "Then you will love the Chicken Adana Kebab. Itâ€™s blended with red pepper and garlic for a kick. To manage the heat, keep a Lemonade  close byâ€”freshly squeezed and cooling. This will be only Â£15.99 for a serving of 1 person."
+
+43. User: "I'm vegetarian." Agent: "We have excellent options. Start with the Plain Avocado Hummus, which is a contemporary blend. Follow it with the Falafel â€”crisp outside, soft within. This will be only Â£9.99 for a serving of 1 person."
+
+44. User: "What is good for kids?"
+Agent: "The Chicken Shish Kebab  is a great choiceâ€”soft, juicy texture and not too spicy. The Lentil Soup  is also very gentle and comforting for younger palates. This will be only Â£15.99 for a serving of 1 person."
+
+45. User: "I don't like lamb." Agent: "No problem. Our Chicken Kebab Barg is fantasticâ€”tender chicken breast marinated in olive oil. Pair it with the Chicken Hummus  for a double dose of velvety, savory chicken flavors. This will be only Â£15.99 for a serving of 1 person."
+
+46. User: "What's the most traditional dish?"
+Agent: "The Lahmacun is a classic street food stapleâ€”crisp flatbread with minced meat. Follow it with Ranjha Gosht, a slow-cooked curry that tastes like home cooking. This will be only Â£19.99 for a serving of 1 person."
+
+47. User: "I want a light lunch."
+Agent: "The Chicken Soup is refined and light. Pair it with the Plain Hummus  and some bread for a meal that satisfies without being heavy. This will be only Â£6.00 for a serving of 1 person."
+
+48. User: "Do you have seafood?"
+Agent: "Our menu focuses on land meats, but for a lighter alternative, try the Chicken Kebab Barg. Itâ€™s marinated in olive oil and garlic, giving it a delicate profile similar to grilled fish. Pair with a Crystal Blue  for a fresh vibe. This will be only Â£15.99 for a serving of 1 person."
+
+49. User: "What is special here?"
+Agent: "Our specific specialty is the Baked Meat. Itâ€™s a premium feast where the meat is baked until the natural flavors deepen. Itâ€™s perfect for sharing. This will be only Â£94.99 for a serving of 4-5 people."
+
+50. User: "I'm in a rush."
+Agent: "The Lahmacun is quickâ€”thin, crisp flatbread. Add a Chicken Soup  for something that is ready to serve and comforting. This will be only Â£6.99 for a serving of 1 person."
+
+51. User: "I'm craving something really savory and rich."
+Agent: "Then the Ranjha Gosht is calling your name. It is a rich and aromatic lamb curry, slow-cooked with warming spices. To balance that intensity, a side of Plain Hummus works wonders. This will be only Â£19.99 for a serving of 1 person."
+
+52. User: "I want something with a lot of garlic."
+Agent: "You will love the Chicken Avocado Hummus. Itâ€™s prepared with garlic, tahini, and lemon, then topped with spiced chicken. Since you enjoy bold flavors, follow it with the Lamb Adana Kebab for a spice-forward finish. This will be only Â£19.99 for a serving of 1 person."
+
+53. User: "Do you have anything crispy?"
+Agent: "Absolutely. The Lahmacun is perfectâ€”a thin, crisp flatbread topped with minced meat. It makes a fantastic appetizer before the Chapli Kebab, which is also shallow-fried until crisp. This will be only Â£9.99 for a serving of 1 person."
+
+54. User: "I feel like having chicken tonight."
+Agent: "A classic choice. I recommend the Chicken Kebab Barg. It features tender pieces of chicken breast grilled slowly to preserve juiciness. Pair it with the Chicken Soup first for a comforting, protein-rich meal. This will be only Â£15.99 for a serving of 1 person."
+
+55. User: "I want something refreshing, not heavy."
+Agent: "The Plain Avocado Hummus is a contemporary, light expression of hummus. For a main, the Chicken Shish Kebab is marinated in citrus, keeping it fresh. Pair with a Lemonade to keep it crisp. This will be only Â£15.99 for a serving of 1 person."
+
+56. User: "I love cheese."
+Agent: "Then you cannot leave without ordering the KÃ¼nefe. It is a warm delicacy with soft, molten cheese layered in crisp pastry. It is best enjoyed after a savory meal like the Chicken Wings appetizer. This will be only Â£6.99 for a serving of 1 person."
+
+57. User: "I want the spiciest thing on the menu."
+Agent: "The Lamb Adana Kebab is what you want. It is finely minced with red peppers and aromatic spices. To help handle the heat, you should definitely order a Tropi Coladaâ€”the creamy coconut is the perfect antidote. This will be only Â£19.99 for a serving of 1 person."
+
+58. User: "I prefer beef or red meat over chicken."
+Agent: "Our Lamb Ribs are exceptional. They are slow-cooked until tender with a gentle glaze. To start, the Lamb Hummus offers a luxurious composition of silky chickpeas and slow-cooked lamb. This will be only Â£25.99 for a serving of 1 person."
+
+59. User: "Something soft and easy to eat?"
+Agent: "The Creamy Mushroom Soup is a luxurious veloutÃ© that is very gentle. For a main, the Bannu Pulao features rice gently cooked with tender meat, offering very soft textures. This will be only Â£15.99 for a serving of 1 person."
+
+60. User: "I want a light dinner."
+Agent: "The Lentil Soup is traditional and slow-cooked but lighter than a curry. Pair it with the Falfelâ€”golden-fried and herb-blendedâ€”for a complete vegetarian meal that won't weigh you down. This will be only Â£9.99 for a serving of 1 person."
+
+Category 8: Drink-Led Scenarios
+61. User: "I'll take a Crystal Blue."
+Agent: "A vibrant choice with delicate sweetness. That sweetness pairs brilliantly with the salty, savory notes of the Halloumi (if available) or the Chicken Wings appetizer. The crispy skin of the wings contrasts with the smooth drink. This will be only Â£15.99 for a serving of 1 person."
+
+62. User: "Two English Teas please."
+Agent: "A timeless infusion. Tea is the perfect partner for conversation and pastry. You simply must add the Baklavaâ€”the light aromatic syrup binds beautifully with the robust tea. This will be only Â£6.99 for a serving of 1 person."
+
+63. User: "Just water."
+Agent: "I can certainly get that. However, our food is rich in spices. I highly recommend a Lemonade to refresh your palate between bites of our Lahmacun. The citrus cuts through the meat's richness. This will be only Â£6.99 for a serving of 1 person."
+
+64. User: "I need a coffee to wake up."
+Agent: "A Cappuccino with perfectly textured milk is coming right up. To make it a treat, pair it with KÃ¼nefe. The bitterness of the espresso cuts through the sweet, molten cheese perfectly. This will be only Â£6.99 for a serving of 1 person."
+
+65. User: "What mocktails do you have?"
+Agent: "We have several, but the Melon Twist is a favorite. Itâ€™s a refreshing blend of ripe melon. It pairs surprisingly well with the Chicken Kebab Barg, enhancing the olive oil marinade. This will be only Â£6.99 for a serving of 1 person."
+
+66. User: "I'll have the Ruby Mint."
+Agent: "Fresh strawberries and cooling mint. A lovely choice. This drink goes very well with the Lamb Chops. The mint in the drink complements the refined smoky notes of the lamb. This will be only Â£25.99 for a serving of 1 person."
+
+67. User: "A pot of Turkish Tea."
+Agent: "Deep amber and traditional. In Turkey, we often drink this with Baklava. The layers of crisp filo and nuts are the ideal texture to go with the hot tea. This will be only Â£6.99 for a serving of 1 person."
+
+68. User: "I'll take the alcohol-free Margarita."
+Agent: "A refined blend of premium tequila flavor and fresh lime. The acidity here needs a fatty partnerâ€”the Lamb Ribs, slow-cooked and glazed, are the perfect savory match. This will be only Â£25.99 for a serving of 1 person."
+
+69. User: "Karak Chai for two."
+Agent: "A rich, aromatic tea slow-brewed with spices. This is very filling. I suggest sharing a Chapli Kebab with it. The herbs in the kebab resonate with the spices in the tea. This will be only Â£9.99 for a serving of 1 person."
+
+70. User: "Tropi Colada please."
+Agent: "Smooth pineapple and coconut. Itâ€™s almost a dessert! If you are eating dinner, pair it with the Chicken Adana Kebab. The charcoal char balances the drink's creamy sweetness. This will be only Â£15.99 for a serving of 1 person."
+
+Category 9: Texture & Composition Focus
+71. User: "I like smooth textures."
+Agent: "Then you must start with the Plain Hummus. It is a silken purÃ©e. Follow it with the Creamy Mushroom Soup for a double dose of velvety luxury. This will be only Â£8.00 for a serving of 1 person."
+
+72. User: "I like food with a crunch."
+Agent: "The Falafel is your best betâ€”crisp on the outside, soft within. For a main, the Lahmacun offers that thin, crisp flatbread texture you crave. This will be only Â£9.99 for a serving of 1 person."
+
+73. User: "I want something juicy."
+Agent: "The Chicken Shish Kebab is expertly grilled specifically to retain a soft, juicy texture. It pairs beautifully with the Chicken Hummus, where the sauteed chicken adds even more moisture. This will be only Â£15.99 for a serving of 1 person."
+
+74. User: "I want a hearty, heavy meal."
+Agent: "The Bannu Pulao is fragrant rice cooked with tender meatâ€”very satisfying. To make it a true feast, add a side of Kibbeh. The bulgur wheat and seasoned mince make it very filling. This will be only Â£15.99 for a serving of 1 person."
+
+75. User: "Something smoky?"
+Agent: "The Lamb Chops are grilled to offer refined smoky notes. To enhance that smoke, start with the Chicken Wings appetizer, which is grilled over open flames for that char flavor. This will be only Â£25.99 for a serving of 1 person."
+
+76. User: "I want a salad-like starter."
+Agent: "We don't have a plain salad, but the Chicken Avocado Hummus is a fresh alternative. The ripe avocado and lemon give it a bright, salad-like profile. Follow it with Chicken Shish. This will be only Â£7.00 for a serving of 1 person."
+
+77. User: "I want a hot starter."
+Agent: "The Chicken Soup is a comforting, hot start. But for something with bite, try the Chapli Kebabâ€”shallow fried and served hot. It wakes up the palate. This will be only Â£9.99 for a serving of 1 person."
+
+78. User: "I want a cold starter."
+Agent: "The Lamb Avocado Hummus is an indulgent cold appetizer. The cool avocado contrasts wonderfully with the warm, slow-cooked lamb on top. This will be only Â£8.99 for a serving of 1 person."
+
+79. User: "I like dipping bread."
+Agent: "Then the Plain Hummus is essential. Itâ€™s a silken purÃ©e with olive oil. Order the Ranjha Gosht main courseâ€”the rich curry sauce is also perfect for dipping. This will be only Â£19.99 for a serving of 1 person."
+
+80. User: "I want something traditional Turkish."
+Agent: "Start with Lahmacun, the classic flatbread. For the main, the Lamb Adana Kebab is the definition of Turkish BBQâ€”hand-pressed and charcoal grilled. This will be only Â£19.99 for a serving of 1 person."
+
+Category 10: Upselling from "Just a Side"
+81. User: "Can I just get a side of rice?"
+Agent: "We have the Bannu Pulao, which is fragant rice cooked with tender meat. It is a meal in itself! Since it is rich in spices, a Chicken Soup is a great moistener to go with it. This will be only Â£15.99 for a serving of 1 person."
+
+82. User: "I just want bread."
+Agent: "I recommend the Lahmacun. It is a crisp flatbread with minced meatâ€”much more flavorful than plain bread. It goes perfectly with the Lentil Soup. This will be only Â£6.99 for a serving of 1 person."
+
+83. User: "I'll have the Chips." (Not on menu)
+Agent: "We don't have chips, but our Falafel offers that same satisfying crunchâ€”golden-fried and crisp. Pair it with Plain Hummus for dipping, just like chips and dip! This will be only Â£9.99 for a serving of 1 person."
+
+84. User: "Just the soup please."
+Agent: "The Creamy Mushroom Soup is a luxurious choice. However, to make it a meal, you need texture. The Kibbeh, with its fried exterior, provides the crunch you are missing. This will be only Â£8.00 for a serving of 1 person."
+
+85. User: "I just want some meat."
+Agent: "The Lamb Kebab Barg is perfectâ€”succulent cubes of premium lamb. Without rice or bread, it is pure protein. To enhance the flavor, a side of Lamb Hummus adds a creamy richness. This will be only Â£19.99 for a serving of 1 person."
+
+86. User: "I want something small."
+Agent: "The Chicken Hummus is a great small plateâ€”velvety hummus with sautÃ©ed chicken. If you want something warm, the Chicken Wings appetizer is also a perfect small portion. This will be only Â£5.00 for a serving of 1 person."
+
+87. User: "I'll take the Chicken Shish."
+Agent: "Classic choice. Since you are ordering a grill item, you need a sauce or dip. The Plain Avocado Hummus adds a cool, creamy element that elevates the hot chicken. This will be only Â£15.99 for a serving of 1 person."
+
+88. User: "Lamb Shish for me."
+Agent: "Hand-cut lamb, grilled to perfection. This dish is rich, so I suggest the Ruby Mint drink. The fresh strawberries and mint cut through the lamb's fat beautifully. This will be only Â£19.99 for a serving of 1 person."
+
+89. User: "Just the Chapli Kebab."
+Agent: "A spicy, shallow-fried delight. It can be quite oily in a delicious way, so a Lemonade is highly recommended to cleanse the palate after each bite. This will be only Â£9.99 for a serving of 1 person."
+
+90. User: "I'll have the Pulao."
+Agent: "The Bannu Pulao delivers delicate aromas. To contrast the soft rice, a crispy appetizer like Falafel is a wonderful addition to the table. This will be only Â£15.99 for a serving of 1 person."
+
+Category 11: Special Occasions & Big Spenders
+91. User: "It's my anniversary."
+Agent: "Congratulations! You must celebrate with the Lamb Chops. They are premium cuts with a refined flavor. Start with Lamb Avocado Hummus for a truly indulgent, romantic meal. This will be only Â£25.99 for a serving of 1 person."
+
+92. User: "We are a group of 4 hungry guys."
+Agent: "Then do not hesitate. Order the Baked Meat Premium Feast. It features tender cuts baked to perfection and is designed exactly for groups like yours. Add a round of Karak Chai to finish. This will be only Â£94.99 for a serving of 4-5 people."
+
+93. User: "I want to impress my date."
+Agent: "Ordering the Lamb Ribs shows you have great taste. They are succulent and glazed. Pair them with a Crystal Blue mocktailâ€”the presentation is striking and sure to impress. This will be only Â£25.99 for a serving of 1 person."
+
+94. User: "Business lunch, need something quick but good."
+Agent: "The Chicken Kebab Barg is elegant and easy to eatâ€”tender chicken breast pieces. Pair it with a Cappuccino for a productive afternoon energy boost. This will be only Â£15.99 for a serving of 1 person."
+
+95. User: "What is the chef's favorite?"
+Agent: "The Ranjha Gosht is a masterpiece of slow-cooking. The aromatic spices are incredible. Pair it with Lahmacun to scoop up that rich curry sauce. This will be only Â£19.99 for a serving of 1 person."
+
+96. User: "I want a feast for the family."
+Agent: "The Baked Meat is the ultimate family centerpiece. It allows natural flavors to deepen into a rich dish everyone can share. While it bakes, share some Chicken Wings to keep the kids happy. This will be only Â£94.99 for a serving of 4-5 people."
+
+97. User: "Money is no object, give me the best."
+Agent: "Then you want the Baked Meat. It is our premium offering at Â£94.99. The meat is tender and slowly baked. Pair it with our Lamb Avocado Hummus for the ultimate luxury starter. This will be only Â£94.99 for a serving of 4-5 people."
+
+98. User: "I want to try something unique."
+Agent: "The Chicken Avocado Hummus is a unique, contemporary expression you won't find everywhere. Follow it with Lamb Ribs for a mix of modern and traditional glazed flavors. This will be only Â£7.00 for a serving of 1 person."
+
+99. User: "We are really thirsty and hungry."
+Agent: "Start with a round of Melon Twist drinksâ€”very refreshing. For the hunger, the Bannu Pulao is a fragrant rice dish that is very filling and satisfying. This will be only Â£15.99 for a serving of 1 person."
+
+100. User: "One of everything!"
+Agent: "I love the enthusiasm! To taste the best of everything, start with the Baked Meat. It covers your premium meat cravings. Finish with Baklava and Turkish Tea for the full cultural experience. This will be only Â£94.99 for a serving of 4-5 people."
+ 
+ 1 0 1 .   U s e r :   " W h a t   i s   t h e   c h e a p e s t   t h i n g ? "   A g e n t :   " T h e   C h i c k e n   H u m m u s   i s   o n l y   Â £ 5 . 0 0 â ¬  a   v e l v e t y   h u m m u s   w i t h   c h i c k e n .   P a i r   i t   w i t h   b r e a d   f o r   a   v e r y   a f f o r d a b l e   l i g h t   m e a l .   T h i s   w i l l   b e   o n l y   Â £ 5 . 0 0   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 0 2 .   U s e r :   " I   h a v e   Â £ 1 5 . "   A g e n t :   " O r d e r   t h e   C h a p l i   K e b a b   ( Â £ 9 . 9 9 ) â ¬  a   s p i c e d ,   f r i e d   k e b a b .   A d d   a   T u r k i s h   T e a   ( Â £ 3 . 5 0 )   a n d   y o u   a r e   w e l l   w i t h i n   b u d g e t .   T h i s   w i l l   b e   o n l y   Â £ 9 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 0 3 .   U s e r :   " I s   t h e   B a k e d   M e a t   e x p e n s i v e ? "   A g e n t :   " I t   i s   Â £ 9 4 . 9 9 ,   b u t   i t   s e r v e s   4 - 5   p e o p l e .   I t   i s   a   p r e m i u m   f e a s t   o f   t e n d e r   b a k e d   c u t s .   W h e n   s h a r e d ,   i t   i s   e x c e l l e n t   v a l u e .   P a i r   w i t h   K i b b e h   f o r   t h e   t a b l e .   T h i s   w i l l   b e   o n l y   Â £ 9 4 . 9 9   f o r   a   s e r v i n g   o f   4 - 5   p e o p l e .   "  
+  
+ 1 0 4 .   U s e r :   " W h y   i s   t h e   s o u p   Â £ 8 ? "   A g e n t :   " T h e   C r e a m y   M u s h r o o m   S o u p   i s   a   l u x u r i o u s   v e l o u t Ã ©   m a d e   f r o m   c a r e f u l l y   s e l e c t e d   m u s h r o o m s â ¬  h i g h   q u a l i t y   i n g r e d i e n t s .   I t   p a i r s   p e r f e c t l y   w i t h   t h e   L a h m a c u n .   T h i s   w i l l   b e   o n l y   Â £ 8 . 0 0   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 0 5 .   U s e r :   " D o   y o u   h a v e   a n y   d e a l s ? "   A g e n t :   " O u r   b e s t   v a l u e   i s   t h e   B a n n u   P u l a o â ¬  m e a t   a n d   r i c e   i n   o n e   d i s h   f o r   Â £ 1 5 . 9 9 .   I t   i s   v e r y   f i l l i n g .   A d d   a   L e m o n a d e   t o   c o m p l e t e   t h e   m e a l .   T h i s   w i l l   b e   o n l y   Â £ 1 5 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 0 6 .   U s e r :   " C a n   I   j u s t   o r d e r   r i c e ? "   A g e n t :   " T h e   B a n n u   P u l a o   i s   o u r   r i c e   d i s h ,   c o o k e d   w i t h   t e n d e r   m e a t .   I t   i s   a   f u l l   m a i n   c o u r s e .   P a i r   i t   w i t h   C h i c k e n   S o u p   i f   y o u   w a n t   e x t r a   s a u c e .   T h i s   w i l l   b e   o n l y   Â £ 1 5 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 0 7 .   U s e r :   " I s   t a p   w a t e r   f r e e ? "   A g e n t :   " Y e s ,   b u t   w i t h   o u r   s p i c e d   m e a t s   l i k e   t h e   L a m b   A d a n a ,   a   L e m o n a d e   ( Â £ 6 . 9 9 )   i s   m u c h   m o r e   r e f r e s h i n g   a n d   c l e a n s e s   t h e   p a l a t e   b e t t e r .   T h i s   w i l l   b e   o n l y   Â £ 1 9 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 0 8 .   U s e r :   " I   w a n t   t o   s p l u r g e . "   A g e n t :   " G o   f o r   t h e   L a m b   C h o p s   ( Â £ 2 5 . 9 9 ) â ¬  p r e m i u m   c u t s .   A d d   a   L a m b   A v o c a d o   H u m m u s   ( Â £ 8 . 9 9 )   t o   s t a r t .   I t   w i l l   b e   a   d e c a d e n t   m e a l .   T h i s   w i l l   b e   o n l y   Â £ 2 5 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 0 9 .   U s e r :   " W h a t   i s   t h e   b e s t   m i d - r a n g e   d i s h ? "   A g e n t :   " T h e   C h i c k e n   A d a n a   K e b a b   a t   Â £ 1 5 . 9 9   i s   p e r f e c t .   I t â ¬ "!s   h a n d - s h a p e d   a n d   c h a r c o a l - g r i l l e d .   A d d   a   C a p p u c c i n o   t o   f i n i s h .   T h i s   w i l l   b e   o n l y   Â £ 1 5 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 1 0 .   U s e r :   " I s   t h e   a p p e t i z e r   s i z e   b i g ? "   A g e n t :   " T h e   C h i c k e n   W i n g s   a p p e t i z e r   i s   s u b s t a n t i a l â ¬  g r i l l e d   s l o w l y   o v e r   o p e n   f l a m e s .   Y o u   c a n   e a s i l y   m a k e   i t   a   l i g h t   m e a l   b y   a d d i n g   a   P l a i n   H u m m u s .   T h i s   w i l l   b e   o n l y   Â £ 1 5 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 1 1 .   U s e r :   " W h a t   i s   B a r g ? "   A g e n t :   " B a r g   m e a n s   ' l e a f '   i n   P e r s i a n   s t y l e â ¬  i t   r e f e r s   t o   t h e   w a y   t h e   m e a t   i s   f l a t t e n e d .   T h e   C h i c k e n   K e b a b   B a r g   i s   t e n d e r   b r e a s t   m e a t   g r i l l e d   f l a t .   I t â ¬ "!s   v e r y   d e l i c a t e .   P a i r   w i t h   C r y s t a l   B l u e .   T h i s   w i l l   b e   o n l y   Â £ 1 5 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 1 2 .   U s e r :   " I s   t h e   P u l a o   s p i c y ? "   A g e n t :   " T h e   B a n n u   P u l a o   i s   c o o k e d   w i t h   w h o l e   s p i c e s ,   s o   i t   i s   a r o m a t i c   b u t   n o t   n e c e s s a r i l y   h o t .   I f   y o u   w a n t   h e a t ,   a d d   t h e   C h a p l i   K e b a b   o n   t h e   s i d e .   T h i s   w i l l   b e   o n l y   Â £ 1 5 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 1 3 .   U s e r :   " I s   t h e   H u m m u s   s m o o t h ? "   A g e n t :   " Y e s ,   t h e   P l a i n   H u m m u s   i s   a   s i l k e n   p u r Ã © e â ¬  v e r y   s m o o t h .   T h e   A v o c a d o   H u m m u s   i s   a l s o   f i n e l y   b l e n d e d .   T r y   t h e   A v o c a d o   o n e   w i t h   C h i c k e n   W i n g s .   T h i s   w i l l   b e   o n l y   Â £ 6 . 0 0   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 1 4 .   U s e r :   " W h a t   i s   i n   t h e   T r o p i   C o l a d a ? "   A g e n t :   " I t   i s   a   s m o o t h   b l e n d   o f   r i p e   p i n e a p p l e   a n d   c r e a m y   c o c o n u t .   I t â ¬ "!s   l i k e   a   d e s s e r t   d r i n k .   P a i r   i t   w i t h   t h e   s p i c y   L a m b   A d a n a   K e b a b   f o r   b a l a n c e .   T h i s   w i l l   b e   o n l y   Â £ 6 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 1 5 .   U s e r :   " I s   t h e   L a m b   R i b s   d i s h   f a t t y ? "   A g e n t :   " R i b s   a r e   n a t u r a l l y   r i c h ,   b u t   t h e s e   a r e   s l o w - c o o k e d   u n t i l   t e n d e r ,   r e n d e r i n g   t h e   f a t   d e l i c i o u s .   T h e   g e n t l e   g l a z e   c u t s   t h e   r i c h n e s s .   P a i r   w i t h   E n g l i s h   T e a .   T h i s   w i l l   b e   o n l y   Â £ 2 5 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 1 6 .   U s e r :   " W h a t   i s   K i b b e h ? "   A g e n t :   " I t   i s   a   s h e l l   o f   b u l g u r   w h e a t   f i l l e d   w i t h   s e a s o n e d   m i n c e d   m e a t ,   f r i e d   u n t i l   c r i s p .   I t â ¬ "!s   a   t e x t u r e   d e l i g h t .   P a i r   i t   w i t h   L e n t i l   S o u p   f o r   d i p p i n g .   T h i s   w i l l   b e   o n l y   Â £ 1 9 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 1 7 .   U s e r :   " D o e s   t h e   s o u p   c o m e   w i t h   b r e a d ? "   A g e n t :   " I t   i s   s e r v e d   a s   i s .   I   h i g h l y   r e c o m m e n d   o r d e r i n g   L a h m a c u n â ¬  t h e   c r i s p   f l a t b r e a d   i s   f a r   s u p e r i o r   t o   p l a i n   b r e a d   f o r   d i p p i n g   i n   t h e   L e n t i l   S o u p .   T h i s   w i l l   b e   o n l y   Â £ 9 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 1 8 .   U s e r :   " I s   t h e   B a k l a v a   h o m e m a d e ? "   A g e n t :   " I t   i s   t r a d i t i o n a l â ¬  d e l i c a t e   l a y e r s   o f   c r i s p   f i l o   a n d   n u t s ,   b a k e d   u n t i l   g o l d e n .   I t   t a s t e s   h o m e m a d e .   P a i r   i t   w i t h   T u r k i s h   T e a   f o r   t h e   p e r f e c t   f i n i s h .   T h i s   w i l l   b e   o n l y   Â £ 6 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 1 9 .   U s e r :   " W h a t   i s   R u b y   M i n t ? "   A g e n t :   " I t   i s   a   m o c k t a i l   w i t h   f r e s h   s t r a w b e r r i e s   ( r u b y )   a n d   c o o l i n g   m i n t .   I t   i s   v e r y   r e f r e s h i n g .   I t   p a i r s   p e r f e c t l y   w i t h   t h e   L a m b   C h o p s .   T h i s   w i l l   b e   o n l y   Â £ 6 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 2 0 .   U s e r :   " I s   t h e   F a l a f e l   d r y ? "   A g e n t :   " N o t   a t   a l l .   O u r   F a l a f e l   i s   s o f t   w i t h i n   a n d   c r i s p   o u t s i d e .   P a i r   i t   w i t h   P l a i n   H u m m u s   f o r   a   m o i s t u r e   b o o s t   a n d   a   c l a s s i c   f l a v o r   c o m b o .   T h i s   w i l l   b e   o n l y   Â £ 9 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 2 1 .   U s e r :   " J u s t   a   l e m o n a d e . "   A g e n t :   " A   f r e s h   c h o i c e .   T h e   L e m o n a d e   i s   l i g h t l y   s w e e t e n e d .   I t   g o e s   p e r f e c t l y   w i t h   a   s p i c y   s n a c k   l i k e   t h e   C h a p l i   K e b a b .   S h a l l   I   a d d   t h a t ?   T h i s   w i l l   b e   o n l y   Â £ 6 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 2 2 .   U s e r :   " I ' l l   h a v e   t h e   m u s h r o o m   s o u p . "   A g e n t :   " A   l u x u r i o u s   v e l o u t Ã © .   H o w e v e r ,   s o u p   i s   l i q u i d â ¬  y o u   n e e d   s o m e   c r u n c h !   T h e   L a h m a c u n   i s   t h e   p e r f e c t   c r i s p y   f l a t b r e a d   c o m p a n i o n .   T h i s   w i l l   b e   o n l y   Â £ 8 . 0 0   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 2 3 .   U s e r :   " W e ' l l   t a k e   t h e   B a k e d   M e a t . "   A g e n t :   " A n   e x c e l l e n t   c h o i c e .   I t   t a k e s   a   l i t t l e   t i m e   t o   p r e p a r e .   I   s u g g e s t   a   r o u n d   o f   K i b b e h   ( c r i s p   m e a t   d u m p l i n g s )   a n d   T r o p i   C o l a d a   d r i n k s   t o   s t a r t   t h e   f e a s t .   T h i s   w i l l   b e   o n l y   Â £ 9 4 . 9 9   f o r   a   s e r v i n g   o f   4 - 5   p e o p l e .   "  
+  
+ 1 2 4 .   U s e r :   " O n e   t e a   p l e a s e . "   A g e n t :   " A n   E n g l i s h   T e a ?   L o v e l y .   B u t   y o u   c a n ' t   h a v e   t e a   w i t h o u t   a   s w e e t   t r e a t .   T h e   B a k l a v a   w a s   m a d e   f o r   t h i s   m o m e n t .   T h i s   w i l l   b e   o n l y   Â £ 3 . 5 0   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 2 5 .   U s e r :   " I ' l l   h a v e   t h e   C h i c k e n   A d a n a . "   A g e n t :   " S p i c e d   a n d   c h a r c o a l - g r i l l e d .   d e l i c i o u s .   S i n c e   i t   h a s   s o m e   h e a t ,   a   M e l o n   T w i s t   d r i n k   i s   e s s e n t i a l   t o   c o o l   y o u r   p a l a t e .   T h i s   w i l l   b e   o n l y   Â £ 1 5 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 2 6 .   U s e r :   " G i v e   m e   t h e   L a m b   S h i s h . "   A g e n t :   " H a n d - c u t   l a m b ,   g r i l l e d   t o   p e r f e c t i o n .   T h i s   i s   a   r i c h   m e a t   d i s h ,   s o   s t a r t   w i t h   t h e   P l a i n   A v o c a d o   H u m m u s   t o   c l e a n s e   y o u r   p a l a t e   w i t h   i t s   f r e s h   l i m e   n o t e s .   T h i s   w i l l   b e   o n l y   Â £ 1 9 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 2 7 .   U s e r :   " I   w a n t   t h e   P u l a o . "   A g e n t :   " T h e   B a n n u   P u l a o   i s   f r a g r a n t   a n d   d r y .   Y o u   d e f i n i t e l y   n e e d   a   s a u c e .   T h e   C h i c k e n   S o u p   i s   a   g r e a t   s i d e   t o   s i p   b e t w e e n   b i t e s   o f   r i c e .   T h i s   w i l l   b e   o n l y   Â £ 1 5 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 2 8 .   U s e r :   " I ' l l   t a k e   t h e   F a l a f e l . "   A g e n t :   " G o l d e n - f r i e d   g o o d n e s s .   S i n c e   t h i s   i s   a   v e g g i e   d i s h ,   a d d   t h e   R u b y   M i n t   d r i n k   f o r   a   b u r s t   o f   f r u i t y   f r e s h n e s s   t o   l i f t   t h e   m e a l .   T h i s   w i l l   b e   o n l y   Â £ 9 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 2 9 .   U s e r :   " J u s t   t h e   C h i c k e n   W i n g s . "   A g e n t :   " G r i l l e d   o v e r   o p e n   f l a m e s â ¬  d e l i c i o u s .   B u t   y o u â ¬ "!l l   b e   h u n g r y   l a t e r .   A d d   t h e   L a m b   R i b s   f o r   a   f u l l   B B Q   m e a t   f e a s t .   T h i s   w i l l   b e   o n l y   Â £ 1 5 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 3 0 .   U s e r :   " I ' l l   h a v e   a   c o f f e e . "   A g e n t :   " A   C a p p u c c i n o   w i t h   t e x t u r e d   m i l k .   Y o u   s i m p l y   m u s t   t r y   t h e   K Ã ¼ n e f e   w i t h   i t .   T h e   h o t   c h e e s e   a n d   c o f f e e   c o m b i n a t i o n   i s   m a g i c a l .   T h i s   w i l l   b e   o n l y   Â £ 4 . 5 0   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 3 1 .   U s e r :   " I   d o n ' t   k n o w   w h a t   t o   o r d e r . "   A g e n t :   " Y o u   c a n ' t   g o   w r o n g   w i t h   t h e   L a m b   A d a n a   K e b a b â ¬  i t â ¬ "!s   o u r   s i g n a t u r e   c h a r c o a l - g r i l l e d   d i s h .   P a i r   i t   w i t h   a   L e m o n a d e .   T h i s   w i l l   b e   o n l y   Â £ 1 9 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 3 2 .   U s e r :   " S u r p r i s e   m e . "   A g e n t :   " T r y   t h e   L a m b   C h o p s .   T h e y   a r e   p r e m i u m   c u t s   w i t h   r e f i n e d   s m o k y   n o t e s â ¬  a   r e a l   t r e a t .   S t a r t   w i t h   L a m b   A v o c a d o   H u m m u s .   T h i s   w i l l   b e   o n l y   Â £ 2 5 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 3 3 .   U s e r :   " W h a t   s m e l l s   g o o d ? "   A g e n t :   " T h a t   w o u l d   b e   t h e   B a k e d   M e a t .   I t   i s   s l o w l y   b a k e d   w i t h   a r o m a t i c s   t h a t   f i l l   t h e   r o o m .   I t â ¬ "!s   a   l a r g e   d i s h ,   p e r f e c t   f o r   s h a r i n g .   T h i s   w i l l   b e   o n l y   Â £ 9 4 . 9 9   f o r   a   s e r v i n g   o f   4 - 5   p e o p l e .   "  
+  
+ 1 3 4 .   U s e r :   " W h a t   i s   p o p u l a r ? "   A g e n t :   " T h e   C h i c k e n   A d a n a   K e b a b   i s   a   c r o w d   f a v o r i t e â ¬  m i n c e d   c h i c k e n   w i t h   r e d   p e p p e r .   P a i r   i t   w i t h   F a l a f e l   t o   s t a r t .   T h i s   w i l l   b e   o n l y   Â £ 1 5 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 3 5 .   U s e r :   " I   w a n t   s o m e t h i n g   d i f f e r e n t . "   A g e n t :   " T r y   t h e   C h i c k e n   A v o c a d o   H u m m u s .   I t â ¬ "!s   a   u n i q u e ,   c o n t e m p o r a r y   d i s h   y o u   w o n ' t   f i n d   e l s e w h e r e .   F o l l o w   i t   w i t h   L a m b   R i b s .   T h i s   w i l l   b e   o n l y   Â £ 7 . 0 0   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 3 6 .   U s e r :   " I ' m   j u s t   h u n g r y . "   A g e n t :   " T h e   B a n n u   P u l a o   i s   t h e   m o s t   f i l l i n g   s i n g l e   d i s h â ¬  r i c e   a n d   m e a t .   I t   w i l l   s a t i s f y   y o u   i m m e d i a t e l y .   A d d   a   K a r a k   C h a i   f o r   c o m f o r t .   T h i s   w i l l   b e   o n l y   Â £ 1 5 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 3 7 .   U s e r :   " I t ' s   c o l d   o u t s i d e . "   A g e n t :   " W a r m   u p   w i t h   t h e   L e n t i l   S o u p â ¬  s l o w - c o o k e d   a n d   c o m f o r t i n g .   F o l l o w   i t   w i t h   t h e   R a n j h a   G o s h t   c u r r y   f o r   d e e p   w a r m t h .   T h i s   w i l l   b e   o n l y   Â £ 9 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 3 8 .   U s e r :   " I t ' s   h o t   o u t s i d e . "   A g e n t :   " C o o l   d o w n   w i t h   a   M e l o n   T w i s t â ¬  r e f r e s h i n g   m e l o n   a n d   c i t r u s .   P a i r   i t   w i t h   a   l i g h t   C h i c k e n   S h i s h   K e b a b .   T h i s   w i l l   b e   o n l y   Â £ 6 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 3 9 .   U s e r :   " I   w a n t   t o   r e l a x . "   A g e n t :   " O r d e r   a   p o t   o f   E n g l i s h   T e a   a n d   a   B a k l a v a .   S i p   s l o w l y   a n d   e n j o y   t h e   d e l i c a t e   l a y e r s   o f   p a s t r y .   I t   i s   p u r e   r e l a x a t i o n .   T h i s   w i l l   b e   o n l y   Â £ 3 . 5 0   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 4 0 .   U s e r :   " W h a t   l o o k s   g o o d ? "   A g e n t :   " T h e   C r y s t a l   B l u e   d r i n k   i s   v i s u a l l y   s t r i k i n g .   P a i r   i t   w i t h   t h e   L a m b   C h o p s   f o r   a   t a b l e   t h a t   l o o k s   a s   g o o d   a s   i t   t a s t e s .   T h i s   w i l l   b e   o n l y   Â £ 6 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 4 1 .   U s e r :   " C a n   I   t a k e   i t   a w a y ? "   A g e n t :   " Y e s .   T h e   L a h m a c u n   t r a v e l s   v e r y   w e l l â ¬  i t   s t a y s   c r i s p .   P a i r   i t   w i t h   F a l a f e l   f o r   a   g r e a t   o n - t h e - g o   m e a l .   T h i s   w i l l   b e   o n l y   Â £ 6 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 4 2 .   U s e r :   " I s   t h e   f o o d   f r e s h ? "   A g e n t :   " A l w a y s .   T h e   P l a i n   H u m m u s   i s   m a d e   f r o m   s l o w - b l e n d e d   c h i c k p e a s   d a i l y .   T a s t e   t h e   f r e s h n e s s   w i t h   s o m e   C h i c k e n   W i n g s .   T h i s   w i l l   b e   o n l y   Â £ 6 . 0 0   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 4 3 .   U s e r :   " I   l i k e   t e x t u r e . "   A g e n t :   " O r d e r   t h e   K i b b e h .   I t   h a s   a   c r u n c h y   f r i e d   s h e l l   a n d   s o f t   s e a s o n e d   m i n c e   i n s i d e .   A   t e x t u r e   m a s t e r p i e c e .   P a i r   w i t h   P l a i n   H u m m u s .   T h i s   w i l l   b e   o n l y   Â £ 1 9 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 4 4 .   U s e r :   " D o   y o u   h a v e   f i s h ? "   A g e n t :   " N o ,   b u t   t h e   C h i c k e n   K e b a b   B a r g   i s   d e l i c a t e   a n d   m a r i n a t e d   i n   o l i v e   o i l ,   o f f e r i n g   a   l i g h t   a l t e r n a t i v e   s i m i l a r   t o   f i s h .   P a i r   w i t h   L e m o n a d e .   T h i s   w i l l   b e   o n l y   Â £ 1 5 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 4 5 .   U s e r :   " I   w a n t   a   s m a l l   b i t e . "   A g e n t :   " T h e   C h i c k e n   W i n g s   a p p e t i z e r   i s   p e r f e c t .   G r i l l e d   o v e r   o p e n   f l a m e s .   A d d   a   T u r k i s h   T e a   t o   s i p   w i t h   i t .   T h i s   w i l l   b e   o n l y   Â £ 1 5 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 4 6 .   U s e r :   " I   w a n t   a   b i g   b i t e . "   A g e n t :   " T h e   B a k e d   M e a t   i s   t h e   b i g g e s t   b i t e   w e   h a v e !   T e n d e r   c u t s   b a k e d   t o   p e r f e c t i o n .   B r i n g   f r i e n d s   t o   h e l p   y o u   e a t   i t .   T h i s   w i l l   b e   o n l y   Â £ 9 4 . 9 9   f o r   a   s e r v i n g   o f   4 - 5   p e o p l e .   "  
+  
+ 1 4 7 .   U s e r :   " I s   t h e   c u r r y   s p i c y ? "   A g e n t :   " T h e   R a n j h a   G o s h t   s a u c e   i s   a r o m a t i c   a n d   w a r m i n g ,   n o t   p a i n f u l .   I t â ¬ "!s   p e r f e c t   f o r   d i p p i n g   L a h m a c u n .   T h i s   w i l l   b e   o n l y   Â £ 1 9 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 4 8 .   U s e r :   " W h a t   i s   t h e   b e s t   s t a r t e r ? "   A g e n t :   " T h e   L a m b   A v o c a d o   H u m m u s   i s   a n   i n d u l g e n t   p a i r i n g   o f   c o o l   a v o c a d o   a n d   h o t   s l o w - c o o k e d   l a m b .   I t   i s   o u r   s t a n d o u t   s t a r t e r .   T h i s   w i l l   b e   o n l y   Â £ 8 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 4 9 .   U s e r :   " W h a t   i s   t h e   b e s t   d e s s e r t ? "   A g e n t :   " T h e   K Ã ¼ n e f e   i s   l e g e n d a r y â ¬  w a r m   m o l t e n   c h e e s e   a n d   s y r u p .   Y o u   m u s t   t r y   i t   w i t h   C a p p u c c i n o .   T h i s   w i l l   b e   o n l y   Â £ 6 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 5 0 .   U s e r :   " I ' m   r e a d y   t o   o r d e r . "   A g e n t :   " W o n d e r f u l .   M i g h t   I   s u g g e s t   s t a r t i n g   w i t h   t h e   B a k e d   M e a t   f o r   t h e   t a b l e ?   I t   i s   o u r   p r e m i u m   f e a s t .   W h i l e   y o u   w a i t ,   e n j o y   s o m e   K i b b e h .   T h i s   w i l l   b e   o n l y   Â £ 9 4 . 9 9   f o r   a   s e r v i n g   o f   4 - 5   p e o p l e .   "  
+  
+ 1 5 1 .   U s e r :   " J u s t   t h e   f r i e s . "   ( A s s u m i n g   n o   f r i e s   o n   m e n u )   A g e n t :   " W e   d o n ' t   s e r v e   f r i e s ,   b u t   o u r   F a l a f e l   o f f e r s   t h a t   s a m e   g o l d e n - f r i e d   c r u n c h   y o u ' r e   l o o k i n g   f o r .   P a i r   i t   w i t h   P l a i n   H u m m u s   f o r   d i p p i n g .   T h i s   w i l l   b e   o n l y   Â £ 9 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 5 2 .   U s e r :   " I ' l l   h a v e   t h e   b u r g e r . "   ( N o   b u r g e r   o n   m e n u )   A g e n t :   " W e   d o n ' t   h a v e   b u r g e r s ,   b u t   t h e   C h a p l i   K e b a b   i s   a   s p i c e d ,   s h a l l o w - f r i e d   p a t t y   t h a t   i s   e v e n   m o r e   f l a v o r f u l .   P a i r   i t   w i t h   L a h m a c u n   t o   m a k e   a   w r a p !   T h i s   w i l l   b e   o n l y   Â £ 9 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 5 3 .   U s e r :   " C a n   I   g e t   a   c o k e ? "   ( N o   c o k e   o n   m e n u )   A g e n t :   " W e   h a v e   s o m e t h i n g   b e t t e r â ¬  f r e s h   L e m o n a d e ,   s q u e e z e d   d a i l y .   I t   p a i r s   m u c h   b e t t e r   w i t h   o u r   s p i c e d   m e a t s   l i k e   L a m b   A d a n a .   T h i s   w i l l   b e   o n l y   Â £ 6 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 5 4 .   U s e r :   " I   w a n t   w i n e . "   ( N o   a l c o h o l   o n   m e n u )   A g e n t :   " W e   a r e   a n   a l c o h o l - f r e e   v e n u e .   I   r e c o m m e n d   t h e   M a r g a r i t a   ( A l c o h o l   F r e e ) â ¬  i t   h a s   a l l   t h e   r e f i n e d   l i m e   a n d   o r a n g e   l i q u e u r   f l a v o r s   y o u   e n j o y .   T h i s   w i l l   b e   o n l y   Â £ 6 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 5 5 .   U s e r :   " I s   t h e   t e a   b a g   t e a ? "   A g e n t :   " O u r   T u r k i s h   T e a   i s   a   t r a d i t i o n a l   b r e w   o f   c a r e f u l l y   s e l e c t e d   l e a v e s ,   s t e e p e d   t o   a   d e e p   a m b e r   c o l o r â ¬  n o   b a g s   h e r e .   P a i r   i t   w i t h   B a k l a v a .   T h i s   w i l l   b e   o n l y   Â £ 3 . 5 0   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 5 6 .   U s e r :   " I   w a n t   t o   s h a r e   a   s o u p . "   A g e n t :   " T h e   L e n t i l   S o u p   i s   a   g r e a t   c h o i c e   t o   s h a r e .   O r d e r   t w o   L a h m a c u n s   s o   y o u   b o t h   h a v e   s o m e t h i n g   c r i s p   t o   d i p   i n t o   t h e   b o w l .   T h i s   w i l l   b e   o n l y   Â £ 9 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 5 7 .   U s e r :   " C a n   I   g e t   e x t r a   m e a t ? "   A g e n t :   " I f   y o u   l o v e   m e a t ,   u p g r a d e   t o   t h e   B a k e d   M e a t   p r e m i u m   f e a s t .   I t   i s   a   h u g e   p o r t i o n   o f   t e n d e r   c u t s .   T h i s   w i l l   b e   o n l y   Â £ 9 4 . 9 9   f o r   a   s e r v i n g   o f   4 - 5   p e o p l e .   "  
+  
+ 1 5 8 .   U s e r :   " I s   t h e   P u l a o   w e t   o r   d r y ? "   A g e n t :   " T h e   B a n n u   P u l a o   i s   a   d r y   r i c e   d i s h .   I   s t r o n g l y   s u g g e s t   a d d i n g   t h e   C h i c k e n   S o u p   o r   R a n j h a   G o s h t   ( c u r r y )   t o   a d d   m o i s t u r e / s a u c e .   T h i s   w i l l   b e   o n l y   Â £ 1 5 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 5 9 .   U s e r :   " I   w a n t   a   l i g h t   l u n c h   c o m b o . "   A g e n t :   " C o m b i n e   t h e   C h i c k e n   S o u p   a n d   t h e   P l a i n   A v o c a d o   H u m m u s .   I t   i s   r e f i n e d ,   l i g h t ,   a n d   h e a l t h y .   T h i s   w i l l   b e   o n l y   Â £ 7 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 6 0 .   U s e r :   " I   w a n t   a   B B Q   f e a s t . "   A g e n t :   " S t a r t   w i t h   C h i c k e n   W i n g s   a n d   L a m b   R i b s .   T h e n ,   f o r   t h e   m a i n   e v e n t ,   t h e   L a m b   C h o p s .   A   t r u e   B B Q   l o v e r ' s   d r e a m .   T h i s   w i l l   b e   o n l y   Â £ 1 5 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 6 1 .   U s e r :   " I   w a n t   t o   t a k e   a   p h o t o   f o r   I n s t a g r a m . "   A g e n t :   " O r d e r   t h e   C r y s t a l   B l u e   m o c k t a i l   a n d   t h e   L a m b   C h o p s .   T h e   v i b r a n t   b l u e   d r i n k   n e x t   t o   t h e   c h a r r e d   c h o p s   i s   s t u n n i n g .   T h i s   w i l l   b e   o n l y   Â £ 6 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 6 2 .   U s e r :   " I ' m   c o l d . "   A g e n t :   " T h e   K a r a k   C h a i   w i l l   w a r m   y o u   u p   i n s t a n t l y   w i t h   i t s   s p i c e s .   P a i r   i t   w i t h   R a n j h a   G o s h t   f o r   a   m e a l   t h a t   w a r m s   y o u   f r o m   t h e   i n s i d e   o u t .   T h i s   w i l l   b e   o n l y   Â £ 4 . 0 0   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 6 3 .   U s e r :   " I ' m   h o t . "   A g e n t :   " T h e   M e l o n   T w i s t   i s   t h e   u l t i m a t e   c o o l e r â ¬  r i p e   m e l o n   a n d   c i t r u s .   P a i r   i t   w i t h   a   l i g h t   C h i c k e n   K e b a b   B a r g .   T h i s   w i l l   b e   o n l y   Â £ 6 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 6 4 .   U s e r :   " I   w a n t   s o m e t h i n g   p l a i n . "   A g e n t :   " T h e   P l a i n   H u m m u s   i s   s i m p l e   a n d   p e r f e c t .   F o l l o w   i t   w i t h   C h i c k e n   S h i s h   K e b a b ,   w h i c h   i s   j u s t   g o o d   g r i l l e d   c h i c k e n .   T h i s   w i l l   b e   o n l y   Â £ 6 . 0 0   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 6 5 .   U s e r :   " I   w a n t   s o m e t h i n g   f a n c y . "   A g e n t :   " T h e   L a m b   A v o c a d o   H u m m u s   f e e l s   v e r y   l u x u r i o u s   w i t h   i t s   s l o w - c o o k e d   l a m b   t o p p i n g .   F o l l o w   i t   w i t h   L a m b   C h o p s .   T h i s   w i l l   b e   o n l y   Â £ 8 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 6 6 .   U s e r :   " I   w a n t   t o   t a s t e   e v e r y t h i n g . "   A g e n t :   " T h e   B a k e d   M e a t   o f f e r s   a   v a r i e t y   o f   c u t s   i n   o n e   d i s h .   I t â ¬ "!s   t h e   b e s t   w a y   t o   s a m p l e   o u r   m e a t   e x p e r t i s e .   A d d   F a l a f e l   a n d   H u m m u s   s i d e s .   T h i s   w i l l   b e   o n l y   Â £ 9 4 . 9 9   f o r   a   s e r v i n g   o f   4 - 5   p e o p l e .   "  
+  
+ 1 6 7 .   U s e r :   " I s   t h e   s a u c e   s p i c y ? "   ( R e f e r r i n g   t o   c u r r y )   A g e n t :   " T h e   R a n j h a   G o s h t   s a u c e   i s   a r o m a t i c   a n d   w a r m i n g ,   n o t   p a i n f u l .   I t â ¬ "!s   p e r f e c t   f o r   d i p p i n g   L a h m a c u n .   T h i s   w i l l   b e   o n l y   Â £ 1 9 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 6 8 .   U s e r :   " I   w a n t   a   h e a l t h y   d r i n k . "   A g e n t :   " T h e   L e m o n a d e   i s   f r e s h   l e m o n   a n d   w a t e r â ¬  v e r y   c l e a n .   P a i r   i t   w i t h   t h e   C h i c k e n   K e b a b   B a r g   f o r   a   s u p e r   h e a l t h y   m e a l .   T h i s   w i l l   b e   o n l y   Â £ 6 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 6 9 .   U s e r :   " I   w a n t   a   s w e e t   d r i n k . "   A g e n t :   " T h e   T r o p i   C o l a d a   i s   s w e e t ,   c r e a m y ,   a n d   t r o p i c a l .   I t â ¬ "!s   a   t r e a t .   P a i r   i t   w i t h   L a m b   A d a n a   t o   b a l a n c e   t h e   s u g a r   w i t h   s p i c e .   T h i s   w i l l   b e   o n l y   Â £ 6 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+  
+ 1 7 0 .   U s e r :   " F i n a l   r e c o m m e n d a t i o n ? "   A g e n t :   " Y o u   c a n n o t   l e a v e   w i t h o u t   t r y i n g   t h e   L a m b   C h o p s   a n d   K Ã ¼ n e f e .   I t   i s   t h e   p e r f e c t   m e a l   f r o m   s t a r t   t o   f i n i s h .   T h i s   w i l l   b e   o n l y   Â £ 2 5 . 9 9   f o r   a   s e r v i n g   o f   1   p e r s o n .   "  
+ 

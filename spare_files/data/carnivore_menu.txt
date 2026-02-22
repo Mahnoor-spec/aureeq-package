@@ -1,0 +1,59 @@
+# IYI Restaurant Menu
+
+## Starters
+
+### Cold Mezze
+*   **Chicken Avocado Hummus (£7.00):** Creamy avocado-infused hummus prepared from chickpeas, tahini, lemon, and garlic, elegantly topped with succulent, spiced chicken.
+*   **Chicken Hummus (£5.00):** Velvety hummus made from chickpeas, tahini, lemon, and garlic, crowned with tender marinated and sautéed chicken.
+*   **Lamb Avocado Hummus (£8.99):** An indulgent pairing of smooth avocado hummus finished with tender, slow-cooked lamb seasoned with aromatics.
+*   **Lamb Hummus (£9.99):** A luxurious composition of silky chickpea hummus topped with slow-cooked lamb delicately infused with spices.
+*   **Plain Avocado Hummus (£7.00):** A contemporary expression of hummus, where chickpeas are finely blended with ripe avocado, tahini, lemon, and garlic.
+*   **Plain Hummus (£6.00):** A silken purée of slow-blended chickpeas, tahini, fresh lemon, and garlic, finished with extra virgin olive oil.
+
+### Hot Mezze
+*   **Chicken Soup (£7.99):** A comforting yet refined soup prepared from tender chicken gently simmered with aromatic vegetables and herbs.
+*   **Chicken Wings (£15.99):** Marinated chicken wings grilled slowly over open flames, allowing the skin to crisp while the meat remains succulent.
+*   **Creamy Mushroom Soup (£8.00):** A luxurious velouté made from carefully selected mushrooms gently sautéed with onion, garlic, and cream.
+*   **Falafel (£9.99):** Golden-fried chickpea fritters blended with herbs, garlic, and spices; crisp on the outside and soft within.
+*   **Kibbeh (£19.99):** A traditional delicacy of finely ground meat and bulgur wheat, filled with seasoned mince and gently fried or baked.
+*   **Lahmacun (£6.99):** A thin, crisp flatbread topped with finely minced meat, tomatoes, herbs, and aromatic spices.
+*   **Lentil Soup (£9.99):** A traditional, slow-cooked soup of red lentils simmered with onion, garlic, and gentle spices.
+
+## IYI Special
+*   **Bannu Pulao (£15.99):** Fragrant basmati rice gently cooked with tender meat and whole spices, delivering delicate aromas and soft textures.
+*   **Chapli Kebab (£9.99):** A traditional spiced kebab made from finely minced meat blended with herbs and spices, shallow-fried until crisp.
+*   **Ranjha Gosht (£19.99):** A rich and aromatic lamb curry, slow-cooked with tomatoes, onions, and warming spices.
+
+## Baked Meat
+*   **Baked Meat (£94.99):** Tender cuts of meat slowly baked with subtle seasoning and aromatics, allowing natural flavors to deepen into a rich, satisfying dish.
+
+## BBQ
+
+### Chicken
+*   **Chicken Adana Kebab (£15.99):** Minced chicken blended with red pepper, garlic, and traditional spices, hand-shaped and grilled over charcoal.
+*   **Chicken Kebab Barg (£15.99):** Tender pieces of chicken breast marinated in aromatic herbs, garlic, and olive oil, grilled slowly to preserve juiciness.
+*   **Chicken Shish Kebab (£15.99):** Classic skewered chicken marinated in citrus, garlic, and herbs, expertly grilled for a soft, juicy texture.
+*   **Chicken Wings (£15.99):** Marinated chicken wings grilled slowly over open flames until the skin is crisp and fragrant.
+
+### Lamb & Beef
+*   **Lamb Adana Kebab (£19.99):** Finely minced lamb combined with red peppers and aromatic spices, hand-pressed onto skewers and grilled over charcoal.
+*   **Lamb Chops (£25.99):** Premium lamb chops delicately seasoned and grilled, offering a tender, juicy texture with refined smoky notes.
+*   **Lamb Kebab Barg (£19.99):** Succulent cubes of premium lamb, delicately marinated in olive oil, garlic, and subtle spices.
+*   **Lamb Ribs (£25.99):** Succulent lamb ribs slow-cooked until tender, finished with a gentle glaze and aromatic seasoning.
+*   **Lamb Shish Kebab (£19.99):** Hand-cut lamb pieces marinated in fragrant spices and olive oil, grilled to enhance their natural richness.
+
+## Desserts
+*   **Baklava (£6.99):** Delicate layers of crisp filo pastry filled with finely ground nuts, baked until golden and finished with light aromatic syrup.
+*   **Künefe (£6.99):** A warm Middle Eastern delicacy of crisp, golden shredded pastry layered with soft, molten cheese and aromatic syrup.
+
+## Drinks
+*   **Cappuccino (£4.50):** Classic Italian coffee crafted with freshly brewed espresso and perfectly textured steamed milk.
+*   **Crystal Blue (£6.99):** A vibrant, citrus-forward blend with delicate sweetness, served chilled with a striking visual appeal.
+*   **English Tea (£3.50):** A timeless infusion of fine black tea leaves, brewed for a clean, robust flavor.
+*   **Karak Chai (£4.00):** A rich and aromatic tea slow-brewed with black tea leaves, milk, and warming spices.
+*   **Lemonade (Alcohol Free) (£6.99):** Freshly squeezed lemons, lightly sweetened and perfectly chilled for a crisp finish.
+*   **Margarita (Alcohol Free) (£6.99):** A refined blend of premium tequila flavor, fresh lime juice, and orange liqueur (alcohol-free).
+*   **Melon Twist (£6.99):** A refreshing blend of ripe melon and fresh citrus, offering a smooth, cooling finish.
+*   **Ruby Mint (£6.99):** Fresh strawberries blended with cooling mint and subtle sweetness.
+*   **Tropi Colada (£6.99):** A smooth, tropical blend of ripe pineapple and creamy coconut.
+*   **Turkish Tea (£3.50):** Traditional brew of carefully selected black tea leaves, steeped to a deep amber color.

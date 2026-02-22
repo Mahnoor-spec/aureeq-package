@@ -1,0 +1,63 @@
+services:
+  aureeq-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    image: aureeq-backend:latest
+    ports:
+      - "8001:8001"
+    env_file: .env
+    environment:
+      - OLLAMA_HOST=http://aureeq-ai:11434
+    depends_on:
+      - aureeq-ai
+      - aureeq-tts
+    volumes:
+      - ./data:/app/data
+    networks:
+      - aureeq-net
+    restart: always
+
+  aureeq-ai:
+    build:
+      context: .
+      dockerfile: Dockerfile.ollama
+    image: aureeq-ai:latest
+    volumes:
+      - ollama_storage:/root/.ollama
+    networks:
+      - aureeq-net
+    restart: always
+
+  aureeq-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+      args:
+        - VITE_API_BASE_URL=${BACKEND_API_URL}
+    image: aureeq-frontend:latest
+    ports:
+      - "12080:80"
+    networks:
+      - aureeq-net
+    restart: always
+
+  aureeq-tts:
+    build:
+      context: .
+      dockerfile: Dockerfile.kokoro
+    image: aureeq-tts:latest
+    ports:
+      - "8880:8880"
+    networks:
+      - aureeq-net
+    restart: always
+
+networks:
+  aureeq-net:
+    name: aureeq-net
+    driver: bridge
+
+volumes:
+  ollama_storage:
+    name: aureeq_ollama_storage

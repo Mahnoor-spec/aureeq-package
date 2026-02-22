@@ -1,0 +1,36 @@
+# System & Venv
+.git
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+pip-log.txt
+.tox/
+.coverage
+.cache
+*.log
+.DS_Store
+.env
+.ipynb_checkpoints
+.vscode
+.idea
+
+# Aureeq Specific
+tools/
+spare_files/
+data/welcome_*.mp3
+data/tts_*.mp3
+comprehensive_report.json
+welcome_output.json
+verify_welcome.json
+*.wav
+*.vrm
+
+# Frontend
+frontend/node_modules
+frontend/dist
+frontend/.env

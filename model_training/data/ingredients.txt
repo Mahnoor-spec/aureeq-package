@@ -1,0 +1,41 @@
+# DISH INGREDIENTS DATA
+
+- Chicken platter (2 persons) | Mixed platter (2 persons)
+- Ingredients | Measure | unit | Ingredients | Measure | unit
+- Chicken Adana Kebab | 2 | pcs | Chicken Adana Kebab | 1 | pcs
+- Chicken Wings | 4 | pcs | Lamb Adana Kebab | 1 | pcs
+- Chicken Shish Kebab | 4 | pcs | Chicken Wings | 4 | pcs
+- White Rice | 150 | g | Lamb Shish Kebab | 4 | pcs
+- Bulgur Rice | 150 | g | White Rice | 150 | g
+- Turkish Bread | 2 | pcs | Bulgur Rice | 150 | g
+- Mixed Salad | 100 | g | Turkish Bread | 2 | pcs
+- Mixed Salad | 100 | g
+- Chicken platter (4 persons)
+- Ingredients | Measure | unit | Mixed platter (4 persons)
+- Chicken Adana Kebab | 4 | pcs | Ingredients | Measure | unit
+- Chicken Wings | 8 | pcs | Chicken Adana Kebab | 2 | pcs
+- Chicken Shish Kebab | 8 | pcs | Lamb Adana Kebab | 2 | pcs
+- White Rice | 300 | g | Chicken Wings | 8 | pcs
+- Bulgur Rice | 300 | g | Lamb Shish Kebab | 8 | pcs
+- Turkish Bread | 4 | pcs | White Rice | 300 | g
+- Mixed Salad | 200 | g | Bulgur Rice | 300 | g
+- Turkish Bread | 4 | pcs
+- Mixed Salad | 200 | g
+- lamb platter (2 persons)
+- Ingredients | Measure | unit
+- Lamb Adana Kebab | 2 | pcs
+- Lamb Chops | 2 | pcs
+- Lamb Shish Kebab | 4 | pcs
+- White Rice | 150 | g
+- Bulgur Rice | 150 | g
+- Turkish Bread | 2 | pcs
+- Mixed Salad | 100 | g
+- lamb platter (4 persons)
+- Ingredients | Measure | unit
+- Lamb Adana Kebab | 4 | pcs
+- Lamb Chops | 4 | pcs
+- Lamb Shish Kebab | 8 | pcs
+- White Rice | 300 | g
+- Bulgur Rice | 300 | g
+- Turkish Bread | 4 | pcs
+- Mixed Salad | 200 | g
