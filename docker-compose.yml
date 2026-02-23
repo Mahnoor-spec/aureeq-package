@@ -9,6 +9,8 @@ services:
     env_file: .env
     environment:
       - OLLAMA_HOST=http://aureeq-ai:11434
+      - TTS_HOST=http://aureeq-tts:8880
+      - MODEL_LLAMA=llama3.3
     depends_on:
       - aureeq-ai
       - aureeq-tts

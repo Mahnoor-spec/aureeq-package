@@ -608,6 +608,7 @@ export function setupAgentInteraction(avatarRenderer) {
         if (recognition) {
           input.value = ''; // Clear previous text for a fresh start
           recognition.start();
+          isVoiceInputSource = true;
           isRecording = true;
           micBtn.classList.add('bg-red-500', 'animate-pulse');
           // Change icon to Square (Stop)
