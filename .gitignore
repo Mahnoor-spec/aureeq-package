@@ -18,7 +18,11 @@ model_training/vector_store_examples/
 *.db
 *.sqlite
 data/orders.db
-model_training/data/*.mp3
+model_tools/
+spare_files/
+data/welcome_*.mp3
+data/tts_*.mp3
+aureeq_deployment_package.zip
 
 # Temporary / Debug
 debug_ollama.py

@@ -66,8 +66,10 @@ class StreamingEngine:
                 for cat, items in cats.items():
                     resp += f"{cat.upper()}\n"
                     for i in items:
-                        price = "94.99" if "baked meat" in i['name'].lower() else i['price']
-                        resp += f"• {i['name']} (£{price})\n"
+                        price = i.get('price', 'N/A')
+                        if "baked meat" in i.get('name', '').lower() and price in ['N/A', None, '']:
+                            price = "94.99"
+                        resp += f"• {i.get('name', 'Unknown Item')} (£{price})\n"
                     resp += "\n"
                 resp += "Would you like to try any of these?"
                 full_response = resp

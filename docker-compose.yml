@@ -23,8 +23,6 @@ services:
       context: .
       dockerfile: Dockerfile.ollama
     image: aureeq-ai:latest
-    volumes:
-      - ollama_storage:/root/.ollama
     networks:
       - aureeq-net
     restart: always
@@ -57,7 +55,3 @@ networks:
   aureeq-net:
     name: aureeq-net
     driver: bridge
-
-volumes:
-  ollama_storage:
-    name: aureeq_ollama_storage
