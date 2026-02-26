@@ -57,7 +57,7 @@ export function AgentWidget() {
         <div class="flex-1 overflow-y-auto p-8 pr-[30%] flex flex-col gap-6 scroll-smooth pointer-events-auto" id="chat-messages">
           <!-- AI Welcome Message -->
           <div class="animate-fade-in group max-w-[85%]">
-             <div class="bg-brand-gold text-black text-[11px] font-bold px-4 py-1 rounded-t-xl w-full tracking-[0.2em] uppercase flex justify-between items-center">
+             <div class="bg-brand-gold text-black text-[11px] font-bold px-4 py-1 rounded-t-xl w-full tracking-[0.2em] uppercase flex justify-between items-center ${currentLanguage === 'ar' ? 'flex-row-reverse' : ''}">
                <span>Aureeq</span>
                <button id="welcome-play-btn" class="hidden hover:scale-110 transition-transform" title="Play Greeting">
                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -435,7 +435,9 @@ export function setupAgentInteraction(avatarRenderer) {
 
       div.innerHTML = `
                 <div class="max-w-[85%]">
-                  <div class="bg-brand-gold text-black text-[11px] font-bold px-4 py-1 rounded-t-xl w-full tracking-[0.2em] uppercase ${currentLanguage === 'ar' ? 'text-right' : ''}">AUREEQ</div>
+                  <div class="bg-brand-gold text-black text-[11px] font-bold px-4 py-1 rounded-t-xl w-full tracking-[0.2em] uppercase flex justify-between items-center ${currentLanguage === 'ar' ? 'flex-row-reverse' : ''}">
+                    <span>Aureeq</span>
+                  </div>
                   <div class="bg-[#1a1a1a] border-x border-b border-white/5 text-slate-100 text-[15px] px-5 py-3 rounded-b-xl shadow-2xl leading-[1.5] font-normal font-inter msg-content" 
                        ${currentLanguage === 'ar' ? 'dir="rtl" style="text-align: right;"' : ''}>${displayText}</div>
                 </div>`;
@@ -443,6 +445,45 @@ export function setupAgentInteraction(avatarRenderer) {
     messagesContainer.appendChild(div);
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
     return div;
+  };
+
+  const playAureeqVoice = async (url, textForFallback = "") => {
+    const fullAudioUrl = resolveAudioUrl(url);
+    console.log("Aureeq Voice Playback Request:", fullAudioUrl);
+
+    try {
+      // Always try avatar first for lipsync
+      if (window.avatarFunctions && window.avatarFunctions.speakFromUrl) {
+        await window.avatarFunctions.speakFromUrl(fullAudioUrl);
+        return true;
+      }
+
+      // Fallback: Fetch and Speak (handles streamed or static URLs)
+      const fetchBody = textForFallback ? JSON.stringify({ text: textForFallback, language: currentLanguage || 'en' }) : null;
+      const res = await fetch(fullAudioUrl, {
+        method: textForFallback ? 'POST' : 'GET',
+        headers: fetchBody ? { 'Content-Type': 'application/json' } : {},
+        body: fetchBody
+      });
+
+      if (!res.ok) throw new Error(`Voice fetch failed: ${res.status}`);
+      const buffer = await res.arrayBuffer();
+
+      if (window.avatarFunctions && window.avatarFunctions.speak) {
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const audioBuffer = await audioCtx.decodeAudioData(buffer);
+        window.avatarFunctions.speak(audioBuffer);
+      } else {
+        const blob = new Blob([buffer], { type: 'audio/wav' });
+        const playUrl = URL.createObjectURL(blob);
+        const audio = new Audio(playUrl);
+        await audio.play();
+      }
+      return true;
+    } catch (e) {
+      console.error("Aureeq Voice Playback Failed:", e);
+      return false;
+    }
   };
 
   const resolveAudioUrl = (path) => {
@@ -557,28 +598,8 @@ export function setupAgentInteraction(avatarRenderer) {
 
               contentEl.innerHTML = cleanText;
 
-              // Play Audio
-              const fullAudioUrl = resolveAudioUrl(audioUrlPath);
-              console.log("Playing streamed audio:", fullAudioUrl);
-
-              fetch(fullAudioUrl, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ text: finalMessage, language: currentLanguage || 'en' })
-              })
-                .then(r => r.arrayBuffer())
-                .then(async buffer => {
-                  if (window.avatarFunctions && window.avatarFunctions.speak) {
-                    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                    const audioBuffer = await audioCtx.decodeAudioData(buffer);
-                    window.avatarFunctions.speak(audioBuffer);
-                  } else {
-                    const blob = new Blob([buffer], { type: 'audio/wav' });
-                    const url = URL.createObjectURL(blob);
-                    new Audio(url).play().catch(e => console.error("Audio playback error:", e));
-                  }
-                })
-                .catch(e => console.error("TTS Fetch Error:", e));
+              // Play Audio using robust unified helper
+              playAureeqVoice(audioUrlPath, finalMessage);
 
               // Check for tags in the final message of an audio response
               const orderMatch = finalMessage.match(/\[ORDER:\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)?\]/i);
@@ -805,37 +826,24 @@ export function setupAgentInteraction(avatarRenderer) {
       }
 
       if (data.audio_url) {
-        const fullWelcomeUrl = resolveAudioUrl(data.audio_url);
         const playBtn = document.getElementById('welcome-play-btn');
 
-        if (playBtn) {
-          playBtn.classList.remove('hidden');
-          playBtn.onclick = () => playAudio();
-        }
-
-        const playAudio = async () => {
-          try {
-            console.log("Attempting to play welcome audio:", fullWelcomeUrl);
-
-            if (window.avatarFunctions && window.avatarFunctions.speakFromUrl) {
-              await window.avatarFunctions.speakFromUrl(fullWelcomeUrl);
-            } else {
-              const audio = new Audio(fullWelcomeUrl);
-              await audio.play();
-            }
-            // Hide play button if playing successfully
-            if (playBtn) playBtn.classList.add('hidden');
-          } catch (e) {
-            console.warn("Audio playback issue (likely auto-play block):", e);
-            if (playBtn) {
-              playBtn.classList.remove('hidden');
-              playBtn.onclick = () => playAudio();
-            }
+        const attemptWelcomeAudio = async () => {
+          const success = await playAureeqVoice(data.audio_url);
+          if (!success && playBtn) {
+            playBtn.classList.remove('hidden');
+            playBtn.onclick = () => attemptWelcomeAudio();
+          } else if (playBtn) {
+            playBtn.classList.add('hidden');
           }
         };
 
+        if (playBtn) {
+          playBtn.onclick = () => attemptWelcomeAudio();
+        }
+
         // Attempt auto-play
-        playAudio();
+        attemptWelcomeAudio();
       }
     } catch (e) {
       console.error("Welcome init failed:", e);

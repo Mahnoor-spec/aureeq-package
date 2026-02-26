@@ -171,7 +171,7 @@ async def welcome_endpoint(name: str, user_id: str = "guest", language: str = "e
                 "voice": "am_adam" if language == 'ar' else "af_sky",
                 "lang_code": "ar" if language == 'ar' else "en-us"
             }
-            resp = await HTTP_CLIENT.post(remote_url, json=payload, timeout=15)
+            resp = await HTTP_CLIENT.post(remote_url, json=payload, timeout=30)
             if resp.status_code == 200:
                 b64 = base64.b64encode(resp.content).decode('utf-8')
                 audio_b64 = f"data:audio/wav;base64,{b64}"

@@ -56,18 +56,24 @@ class TTSRequest(BaseModel):
 
 @app.post("/generate")
 async def generate_tts(request: TTSRequest):
+    import time
+    start_time = time.time()
     try:
+        # Avoid direct print of Arabic text to console to prevent encoding errors on Windows
+        print(f"DEBUG: Generating TTS (length: {len(request.text)})...", flush=True)
         engine = get_engine()
         samples, sample_rate = engine.create(
             request.text, voice=request.voice, speed=1.0, lang=request.lang
         )
         
-        # Save to memory instead of disk
+        # Save to memory as WAV for faster processing and browser compatibility
         buffer = io.BytesIO()
-        sf.write(buffer, samples, sample_rate, format='mp3')
+        sf.write(buffer, samples, sample_rate, format='WAV', subtype='PCM_16')
         buffer.seek(0)
         
-        return StreamingResponse(buffer, media_type="audio/mpeg")
+        duration = time.time() - start_time
+        print(f"DEBUG: TTS Generation complete in {duration:.2f}s", flush=True)
+        return StreamingResponse(buffer, media_type="audio/wav")
         
     except Exception as e:
         print(f"TTS Error: {e}")
