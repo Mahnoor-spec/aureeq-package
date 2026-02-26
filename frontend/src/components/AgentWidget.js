@@ -10,8 +10,8 @@ export function AgentWidget() {
   const name = user.name || 'Guest';
 
   const welcomeText = currentLanguage === 'ar'
-    ? `مرحباً ${name}، أنا أورِيق مساعدك الشخصي. كيف يمكنني مساعدتك اليوم؟`
-    : `Hello ${name}, I am Aureeq your personal assistant. How may I help you today?`;
+    ? `مرحباً <bdi>${name}</bdi>، أنا AUREEQ مساعدك الشخصي. كيف يمكنني مساعدتك اليوم؟`
+    : `Hello ${name}, I am AUREEQ your personal assistant. How may I help you today?`;
 
   return `
     <!-- Large Horizontal Dashboard Container -->
@@ -231,11 +231,10 @@ export function setupAgentInteraction(avatarRenderer) {
     // NEW: Update welcome message text instantly for "quick" feel
     const welcomeTextEl = document.getElementById('welcome-message-text');
     if (welcomeTextEl) {
-      const user = JSON.parse(localStorage.getItem('aureeq_user') || '{}');
-      const name = user.name || 'Guest';
+      const name = localStorage.getItem('aureeq_user_name') || 'Guest';
       welcomeTextEl.textContent = lang === 'ar'
-        ? `مرحباً ${name}، أنا أورِيق مساعدك الشخصي. كيف يمكنني مساعدتك اليوم؟`
-        : `Hello ${name}, I am Aureeq your personal assistant. How may I help you today?`;
+        ? `مرحباً ${name}، أنا AUREEQ مساعدك الشخصي. كيف يمكنني مساعدتك اليوم؟`
+        : `Hello ${name}, I am AUREEQ your personal assistant. How may I help you today?`;
     }
   };
 
@@ -428,9 +427,10 @@ export function setupAgentInteraction(avatarRenderer) {
         .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="text-brand-gold underline hover:text-yellow-400 break-all">$1</a>');
 
       div.innerHTML = `
-                <div class="max-w-[85%]">
-                  <div class="bg-brand-gold text-black text-[11px] font-bold px-4 py-1 rounded-t-xl w-full tracking-[0.2em] uppercase">Aureeq</div>
-                  <div class="bg-[#1a1a1a] border-x border-b border-white/5 text-slate-100 text-[15px] px-5 py-3 rounded-b-xl shadow-2xl leading-[1.5] font-normal font-inter msg-content">${displayText}</div>
+                <div class="max-w-[85%] ${currentLanguage === 'ar' ? 'mr-0 ml-auto' : ''}">
+                  <div class="bg-brand-gold text-black text-[11px] font-bold px-4 py-1 rounded-t-xl w-full tracking-[0.2em] uppercase ${currentLanguage === 'ar' ? 'text-right' : ''}">AUREEQ</div>
+                  <div class="bg-[#1a1a1a] border-x border-b border-white/5 text-slate-100 text-[15px] px-5 py-3 rounded-b-xl shadow-2xl leading-[1.5] font-normal font-inter msg-content" 
+                       ${currentLanguage === 'ar' ? 'dir="rtl" style="text-align: right;"' : ''}>${displayText}</div>
                 </div>`;
     }
     messagesContainer.appendChild(div);
@@ -617,7 +617,7 @@ export function setupAgentInteraction(avatarRenderer) {
 
       // Check order tag again in full text for safety (if not already handled by audio block)
       const orderMatchFull = fullText.match(/\[ORDER:\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)?\]/i);
-      const removeMatchFull = fullText.match(/\[REMOVE:\s*(.*?)\s*\|\s*(.*?)?\]/i);
+      const removeMatchFull = fullText.match(/\[REMOVE:\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)?\]/i);
 
       if (orderMatchFull && !fullText.includes("|AUDIO_URL|")) {
         const name = orderMatchFull[1].trim();
@@ -763,8 +763,8 @@ export function setupAgentInteraction(avatarRenderer) {
         const welcomeTextEl = document.getElementById('welcome-message-text');
         if (welcomeTextEl) {
           welcomeTextEl.textContent = currentLanguage === 'ar'
-            ? `مرحباً ${name}، أنا أورِيق مساعدك الشخصي. كيف يمكنني مساعدتك اليوم؟`
-            : `Hello ${name}, I am Aureeq your personal assistant. How may I help you today?`;
+            ? `مرحباً ${name}، أنا AUREEQ مساعدك الشخصي. كيف يمكنني مساعدتك اليوم؟`
+            : `Hello ${name}, I am AUREEQ your personal assistant. How may I help you today?`;
         }
 
         checkOnboarding();

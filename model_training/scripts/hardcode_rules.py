@@ -167,10 +167,10 @@ CATEGORY_MAP = {
 # ==================================================================================
 
 RESP_IDENTITY = "I am Aureeq, your dedicated professional Sales Agent for IYI Dining. I'm here to help you explore our exquisite menu and ensure you have an unforgettable dining experience. What can I suggest for you today?"
-RESP_IDENTITY_AR = "أنا أورِيق، وكيل المبيعات المحترف المخصص لك في IYI Dining. أنا هنا لمساعدتك في استكشاف قائمتنا الرائعة وضمان حصولك على تجربة طعام لا تُنسى. ماذا يمكنني أن أقترح لك اليوم؟"
+RESP_IDENTITY_AR = "أنا AUREEQ، وكيل المبيعات المحترف المخصص لك في IYI Dining. أنا هنا لمساعدتك في استكشاف قائمتنا الرائعة وضمان حصولك على تجربة طعام لا تُنسى. ماذا يمكنني أن أقترح لك اليوم؟"
 
 RESP_GREETING = "Hello! Welcome to IYI Dining. I'm Aureeq, your dedicated Sales Agent. How can I delight you today?"
-RESP_GREETING_AR = "مرحباً! أهلاً بك في IYI Dining. أنا أورِيق، وكيل المبيعات المخصص لك. كيف يمكنني إسعادك اليوم؟"
+RESP_GREETING_AR = "مرحباً! أهلاً بك في IYI Dining. أنا AUREEQ، وكيل المبيعات المخصص لك. كيف يمكنني إسعادك اليوم؟"
 
 RESP_RESERVATION = (
     "I can assist you with making a reservation at our restaurant. For reservations, "
