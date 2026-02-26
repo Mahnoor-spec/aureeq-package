@@ -112,7 +112,13 @@ app = FastAPI(lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "http://localhost:5174",
+        "http://127.0.0.1:5174",
+        "*"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -126,6 +132,7 @@ class ChatRequest(BaseModel):
     message: str
     user_id: str
     was_voice: bool = False
+    language: str = "en"
 
 class TTSRequest(BaseModel):
     text: str
@@ -137,10 +144,16 @@ async def health_check():
     return {"status": "ok"}
 
 # Fix for 404 on Welcome
+@app.get("/api/welcome")
 @app.get("/welcome")
-async def welcome_endpoint(name: str, user_id: str = "guest"):
+async def welcome_endpoint(name: str, user_id: str = "guest", language: str = "en"):
     """Generate welcome message and audio"""
-    text = f"Hello {name}, I am Aureeq your personal assistant. How may I help you today?"
+    if language == 'ar':
+        text = f"مرحباً {name}، أنا أورِيق مساعدك الشخصي. كيف يمكنني مساعدتك اليوم؟"
+    else:
+        text = f"Hello {name}, I am Aureeq your personal assistant. How may I help you today?"
+        
+    print(f"DEBUG: Generating welcome text [{language}]", flush=True)
     
     # Save to memory to ensure history_len > 0 for Turn 1
     if ENGINE:
@@ -150,8 +163,14 @@ async def welcome_endpoint(name: str, user_id: str = "guest"):
     if HTTP_CLIENT:
         try:
             remote_url = f"{TTS_HOST_URL}/generate"
-            voice = os.getenv("TTS_VOICE", "en-gb-male")
-            payload = {"text": text, "voice": voice}
+            if language == 'ar':
+                voice = "am_adam"  # Arabic Male voice (using AM_ADAM model with 'ar' lang)
+                lang_code = "ar"
+            else:
+                voice = os.getenv("TTS_VOICE", "bm_george")
+                lang_code = "en-gb"
+            
+            payload = {"text": text, "voice": voice, "lang": lang_code}
             
             resp = await HTTP_CLIENT.post(remote_url, json=payload)
             if resp.status_code == 200:
@@ -164,6 +183,7 @@ async def welcome_endpoint(name: str, user_id: str = "guest"):
 
     return JSONResponse({"response": text, "audio_url": audio_b64})
 
+@app.post("/api/chat")
 @app.post("/chat")
 async def chat_endpoint(request: ChatRequest):
     if not ENGINE:
@@ -183,7 +203,7 @@ async def chat_endpoint(request: ChatRequest):
         full_response = ""
         token_count = 0
         try:
-            async for chunk in ENGINE.generate_response(request.user_id, request.message):
+            async for chunk in ENGINE.generate_response(request.user_id, request.message, request.language):
                 if chunk:
                     # STRICT RULE: No symbols in responses
                     cleaned_chunk = chunk.replace("*", "").replace("#", "")
@@ -213,6 +233,7 @@ async def chat_endpoint(request: ChatRequest):
 
     return StreamingResponse(generate_and_stream(), media_type="text/event-stream")
 
+@app.post("/api/tts")
 @app.post("/tts")
 async def tts_endpoint(request: TTSRequest):
     """Proxy to the actual TTS engine"""
@@ -221,8 +242,14 @@ async def tts_endpoint(request: TTSRequest):
         
     try:
         remote_url = f"{TTS_HOST_URL}/generate"
-        voice = os.getenv("TTS_VOICE", "en-gb-male")
-        payload = {"text": request.text, "voice": voice}
+        if request.language == 'ar':
+            voice = "af_nicole" # Or specific Arabic Kokoro voice available
+            lang_code = "en-us"
+        else:
+            voice = os.getenv("TTS_VOICE", "bm_george")
+            lang_code = "en-gb"
+            
+        payload = {"text": request.text, "voice": voice, "lang": lang_code}
         
         resp = await HTTP_CLIENT.post(remote_url, json=payload)
         if resp.status_code == 200:

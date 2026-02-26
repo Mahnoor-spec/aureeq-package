@@ -52,13 +52,14 @@ def get_engine():
 class TTSRequest(BaseModel):
     text: str
     voice: str = "bm_george" # UK Male voice
+    lang: str = "en-gb"
 
 @app.post("/generate")
 async def generate_tts(request: TTSRequest):
     try:
         engine = get_engine()
         samples, sample_rate = engine.create(
-            request.text, voice=request.voice, speed=1.0, lang="en-gb"
+            request.text, voice=request.voice, speed=1.0, lang=request.lang
         )
         
         # Save to memory instead of disk

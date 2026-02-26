@@ -22,9 +22,17 @@ class StreamingEngine:
         self.ingredients = ""
         self.rest_info = ""
 
-    async def generate_response(self, user_id: str, message: str) -> AsyncGenerator[str, None]:
+    async def generate_response(self, user_id: str, message: str, language: str = "en") -> AsyncGenerator[str, None]:
+        search_query = message
+        if language == 'ar':
+            try:
+                search_query = await self.llama.translate(message, "English")
+                print(f"DEBUG: Translated query to English for routing: {search_query}", flush=True)
+            except Exception as e:
+                print(f"Translation failed: {e}")
+        
         # 1. CLASSIFY INTENT
-        intent = router.classify_intent(message)
+        intent = router.classify_intent(search_query)
         print(f"Routing to: {intent}", flush=True)
         
         # 2. GET SESSION MEMORY (Read only for context)
@@ -35,23 +43,23 @@ class StreamingEngine:
 
         # 3. HANDLE SPECIFIC INTENTS
         if intent == "HARDCODED_GREETING":
-            full_response = rules.RESP_GREETING
+            full_response = rules.RESP_GREETING if language == 'en' else rules.RESP_GREETING_AR
         elif intent == "HARDCODED_IDENTITY":
-            full_response = rules.RESP_IDENTITY
+            full_response = rules.RESP_IDENTITY if language == 'en' else rules.RESP_IDENTITY_AR
         elif intent == "HARDCODED_LOCATION":
-            full_response = rules.RESP_LOCATION
+            full_response = rules.RESP_LOCATION if language == 'en' else rules.RESP_LOCATION_AR
         elif intent == "HARDCODED_RESERVATION":
-            full_response = rules.RESP_RESERVATION
+            full_response = rules.RESP_RESERVATION if language == 'en' else rules.RESP_RESERVATION_AR
         elif intent == "HARDCODED_MENU_FULL":
-            full_response = rules.RESP_FULL_MENU
+            full_response = rules.RESP_FULL_MENU if language == 'en' else rules.RESP_FULL_MENU_AR
         elif intent == "HARDCODED_MENU_STARTER":
-            full_response = rules.RESP_STARTER_MENU
+            full_response = rules.RESP_STARTER_MENU if language == 'en' else rules.RESP_STARTER_MENU_AR
         elif intent == "HARDCODED_MENU_MAIN":
-            full_response = rules.RESP_MAIN_MENU
+            full_response = rules.RESP_MAIN_MENU if language == 'en' else rules.RESP_MAIN_MENU_AR
         elif intent == "HARDCODED_MENU_DRINKS":
-            full_response = rules.RESP_DRINKS_MENU
+            full_response = rules.RESP_DRINKS_MENU if language == 'en' else rules.RESP_DRINKS_MENU_AR
         elif intent == "HARDCODED_MENU_DESSERT":
-            full_response = rules.RESP_DESSERTS_MENU
+            full_response = rules.RESP_DESSERTS_MENU if language == 'en' else rules.RESP_DESSERTS_MENU_AR
         elif intent == "HARDCODED_MENU_SEARCH":
             keywords = ["lamb", "chicken", "beef", "prawn", "vegetarian", "veg", "vegan"]
             target = next((k for k in keywords if k in message.lower()), "food")
@@ -76,29 +84,31 @@ class StreamingEngine:
             else:
                 full_response = f"I'm sorry, I couldn't find any specific {target} options right now. Would you like to see our full menu instead?"
         elif intent == "HARDCODED_REMOVE_CART":
-             item_matches = self.phi.find_items_fuzzy(message)
+             item_matches = self.phi.find_items_fuzzy(search_query)
              if item_matches:
                  item = item_matches[0]
                  price = "94.99" if "baked meat" in item['name'].lower() else item['price']
                  wp_id = item.get('wp_id', item.get('id', ''))
-                 # Format: [REMOVE: Name | Price | WP_ID]
-                 full_response = rules.RESP_REMOVE_FROM_CART_SUCCESS.format(name=item['name'], price=price) + f" [REMOVE: {item['name']} | {price} | {wp_id}]"
+                 resp = rules.RESP_REMOVE_FROM_CART_SUCCESS.format(name=item['name'], price=price) + f" [REMOVE: {item['name']} | {price} | {wp_id}]"
+                 full_response = resp if language == 'en' else f"تمت إزالة {item['name']} من السلة بنجاح. [REMOVE: {item['name']} | {price} | {wp_id}]"
              else:
-                 full_response = "I'm not sure which item you want to remove. Could you say the name exactly as it appears on the menu?"
+                 full_response = "I'm not sure which item you want to remove. Could you say the name exactly as it appears on the menu?" if language == 'en' else "لم أتمكن من تحديد العنصر الذي ترغب في إزالته."
         elif intent == "HARDCODED_CART":
-            if any(k in message.lower() for k in ["checkout", "pay", "buy now"]):
-                 full_response = rules.RESP_CHECKOUT
+            if any(k in search_query.lower() for k in ["checkout", "pay", "buy now"]):
+                 full_response = rules.RESP_CHECKOUT if language == 'en' else "لتأكيد طلبك والانتقال للدفع، يرجى المتابعة."
             else:
-                item_matches = self.phi.find_items_fuzzy(message)
+                item_matches = self.phi.find_items_fuzzy(search_query)
                 if item_matches:
                     item = item_matches[0]
                     order_db.save_order(user_id, [item['name']])
                     price = "94.99" if "baked meat" in item['name'].lower() else item['price']
                     wp_id = item.get('wp_id', item.get('id', ''))
-                    # Format: [ORDER: Name | Price | WP_ID]
-                    full_response = rules.RESP_ADD_TO_CART_SUCCESS.format(name=item['name'], price=price) + f" [ORDER: {item['name']} | {price} | {wp_id}]"
+                    resp = rules.RESP_ADD_TO_CART_SUCCESS.format(name=item['name'], price=price) + f" [ORDER: {item['name']} | {price} | {wp_id}]"
+                    full_response = resp if language == 'en' else f"لقد تمت إضافة {item['name']} إلى سلة التسوق الخاصة بك! [ORDER: {item['name']} | {price} | {wp_id}]"
                 else:
-                    full_response = rules.RESP_ADD_TO_CART_FAIL
+                    full_response = rules.RESP_ADD_TO_CART_FAIL if language == 'en' else "عذراً، لم أتمكن من إضافة هذا العنصر."
+
+        # Removed the Arabic bypass - let hardcoded intents speak their native Arabic responses
 
         if full_response:
             yield full_response
@@ -126,13 +136,13 @@ class StreamingEngine:
                         menu_context = [it for it in self.phi.menu_data if it.get('category') in detected_cats]
                     if not menu_context:
                         menu_context, style_example = await asyncio.gather(
-                            self.rag.search_menu(message, k=10),
-                            self.rag.search_examples(message)
+                            self.rag.search_menu(search_query, k=10),
+                            self.rag.search_examples(search_query)
                         )
             except Exception as e:
                 print(f"RAG Error: {e}")
             
-            direct_matches = self.phi.find_items_fuzzy(message)
+            direct_matches = self.phi.find_items_fuzzy(search_query)
             if direct_matches:
                 dm = direct_matches[0]
                 menu_context = [item for item in menu_context if item['name'] != dm['name']]
@@ -157,7 +167,7 @@ class StreamingEngine:
             try:
                 has_content = False
                 async for chunk in self.llama.handle(
-                    message, history, menu_context, style_example, full_rest_context, is_gadget_query=is_gadget
+                    message, history, menu_context, style_example, full_rest_context, is_gadget_query=is_gadget, language=language
                 ):
                     yield chunk
                     has_content = True

@@ -167,30 +167,54 @@ CATEGORY_MAP = {
 # ==================================================================================
 
 RESP_IDENTITY = "I am Aureeq, your dedicated professional Sales Agent for IYI Dining. I'm here to help you explore our exquisite menu and ensure you have an unforgettable dining experience. What can I suggest for you today?"
+RESP_IDENTITY_AR = "أنا أورِيق، وكيل المبيعات المحترف المخصص لك في IYI Dining. أنا هنا لمساعدتك في استكشاف قائمتنا الرائعة وضمان حصولك على تجربة طعام لا تُنسى. ماذا يمكنني أن أقترح لك اليوم؟"
+
 RESP_GREETING = "Hello! Welcome to IYI Dining. I'm Aureeq, your dedicated Sales Agent. How can I delight you today?"
+RESP_GREETING_AR = "مرحباً! أهلاً بك في IYI Dining. أنا أورِيق، وكيل المبيعات المخصص لك. كيف يمكنني إسعادك اليوم؟"
 
 RESP_RESERVATION = (
     "I can assist you with making a reservation at our restaurant. For reservations, "
     "please call +44 20 1234 5678 or email info@iyirestaurant.co.uk.\n\n"
     "[Follow @iyi_dining on Instagram](https://www.instagram.com/iyi_dining) to stay updated."
 )
+RESP_RESERVATION_AR = (
+    "يمكنني مساعدتك في إجراء حجز في مطعمنا. للحجوزات، "
+    "يرجى الاتصال على +44 20 1234 5678 أو إرسال بريد إلكتروني إلى info@iyirestaurant.co.uk.\n\n"
+    "[تابع @iyi_dining على انستغرام](https://www.instagram.com/iyi_dining) لتبقى على اطلاع."
+)
 
 RESP_LOCATION = (
     "We are located at 123 IYI Street, London, W1 2AB.\n\n"
     "[Follow @iyi_dining on Instagram](https://www.instagram.com/iyi_dining) to stay updated."
 )
+RESP_LOCATION_AR = (
+    "نحن موجودون في 123 شارع IYI، لندن، W1 2AB.\n\n"
+    "[تابع @iyi_dining على انستغرام](https://www.instagram.com/iyi_dining) لتبقى على اطلاع."
+)
+
 RESP_THANK_YOU = "You are most welcome! It is my pleasure to assist you. Is there anything else from our menu I can tell you about?"
+RESP_THANK_YOU_AR = "على الرحب والسعة! إنه لمن دواعي سروري مساعدتك. هل هناك أي شيء آخر من قائمتنا يمكنني إخبارك عنه؟"
+
 RESP_GOODBYE = "Goodbye! It was a pleasure chatting with you. We hope to see you soon at IYI Dining. Have a wonderful day!"
+RESP_GOODBYE_AR = "وداعاً! لقد كان من دواعي سروري الدردشة معك. نأمل أن نراك قريباً في IYI Dining. أتمنى لك يوماً رائعاً!"
 
 RESP_NON_FOOD = "Sorry, I am only able to help you with your food selections."
+RESP_NON_FOOD_AR = "عذراً، يمكنني فقط مساعدتك في اختيارات الطعام الخاصة بك."
 
 # For Gadgets - This uses a placeholder that the Llama handler will need to fill
 RESP_GADGET_TEMPLATE = "Sorry I don't offer this but you can enjoy our {dish_name} while using that {gadget_name}."
 
 RESP_ADD_TO_CART_SUCCESS = "Excellent choice! I've added {name} to your cart. [ORDER: {name} | {price}]"
+RESP_ADD_TO_CART_SUCCESS_AR = "اختيار رائع! لقد أضفت {name} إلى سلة التسوق الخاصة بك. [ORDER: {name} | {price}]"
+
 RESP_REMOVE_FROM_CART_SUCCESS = "No problem at all. I've removed {name} from your cart. [REMOVE: {name} | {price}]"
+RESP_REMOVE_FROM_CART_SUCCESS_AR = "لا توجد مشكلة على الإطلاق. لقد قمت بإزالة {name} من سلتك. [REMOVE: {name} | {price}]"
+
 RESP_ADD_TO_CART_FAIL = "I'd love to add that for you, but I'm not sure which item you mean. Could you say the name exactly as it appears on the menu?"
+RESP_ADD_TO_CART_FAIL_AR = "أود إضافة ذلك لك، لكني لست متأكداً من العنصر الذي تقصده. هل يمكنك قول الاسم تماماً كما يظهر في القائمة؟"
+
 RESP_CHECKOUT = "Certainly! You can proceed to checkout by clicking the 'Checkout' button in your shopping cart. Would you like anything else before you go?"
+RESP_CHECKOUT_AR = "بالتأكيد! يمكنك المتابعة إلى الدفع بالضغط على زر 'الدفع' في سلة التسوق الخاصة بك. هل تود أي شيء آخر قبل أن تذهب؟"
 
 # Strict Menu Display Enforcer
 RESP_MENU_HEADER = "Here is our full menu:" 
@@ -229,6 +253,51 @@ SIGNATURE_DISH_NAMES = [
 ]
 
 # --- HARDCODED MENU DISPLAYS ---
+RESP_FULL_MENU_AR = (
+    "قائمة طعامنا الكاملة في IYI Dining هي مجموعة مختارة من النكهات الأصيلة:\n\n"
+    "المقبلات الباردة\n"
+    "• حمص بالدجاج (5.00 جنيه إسترليني) - حمص مع دجاج سوتيه.\n"
+    "• حمص بالأفوكادو واللحم (8.99 جنيه إسترليني) - حمص بالأفوكادو مع لحم مطهو ببطء.\n"
+    "• حمص بالأفوكادو والدجاج (7.00 جنيه إسترليني) - حمص بالأفوكادو مع دجاج متبل.\n"
+    "• حمص بالأفوكادو سادة (7.00 جنيه إسترليني) - مهروس الحمص والأفوكادو الناعم.\n"
+    "• حمص سادة (6.00 جنيه إسترليني) - مهروس الحمص والطحينة الناعم.\n"
+    "• حمص باللحم (9.99 جنيه إسترليني) - حمص مع لحم عطري.\n\n"
+    "المقبلات الساخنة\n"
+    "• شوربة الفطر الكريمة (8.00 جنيه إسترليني) - فطر مخملي ناعم.\n"
+    "• كبة (19.99 جنيه إسترليني) - لحم متبل وبرغل.\n"
+    "• شوربة الدجاج (7.99 جنيه إسترليني) - مرق صافي ولذيذ.\n"
+    "• شوربة العدس (9.99 جنيه إسترليني) - عدس أحمر مطهو ببطء على الطريقة التقليدية.\n"
+    "• لحم بعجين (6.99 جنيه إسترليني) - خبز مفرود رقيق مع لحم مفروم وأعشاب.\n"
+    "• أجنحة دجاج (15.99 جنيه إسترليني) - أجنحة متبلة ومشوية على الفحم.\n"
+    "• فلافل (9.99 جنيه إسترليني) - كرات الحمص المقلية الذهبية.\n\n"
+    "السلطات\n"
+    "• تبولة (7.99 جنيه إسترليني) - سلطة البقدونس والنعناع والبرغل.\n"
+    "• سلطة الزبادي والخيار (6.99 جنيه إسترليني) - زبادي منعش مع الثوم.\n"
+    "• فتوش (9.99 جنيه إسترليني) - خضروات طازجة مع خبز محمص.\n\n"
+    "الأطباق الرئيسية (المشاوي والكاتي)\n"
+    "• ريش غنم (25.99 جنيه إسترليني) - ريش طرية مطهوة ببطء.\n"
+    "• تيكا الروبيان (25.99 جنيه إسترليني) - روبيان متبل ومشوي.\n"
+    "• كباب دجاج بارج (15.99 جنيه إسترليني) - صدر دجاج متبل.\n"
+    "• كباب لحم بارج (19.99 جنيه إسترليني) - مكعبات لحم غنم مشوية ممتازة.\n"
+    "• ريش غنم (25.99 جنيه إسترليني) - ريش غنم ممتازة متبلة ومشوية.\n"
+    "• كباب أضنة دجاج (15.99 جنيه إسترليني) - دجاج مفروم مع بهارات.\n"
+    "• كباب أضنة لحم (19.99 جنيه إسترليني) - لحم مفروم مع بهارات عطرية.\n"
+    "• شيش كباب دجاج (15.99 جنيه إسترليني) - صدر دجاج بأسياخ مع الحمضيات والأعشاب.\n"
+    "• شيش كباب لحم (19.99 جنيه إسترليني) - لحم مقطع يدوياً ببهارات عطرية.\n"
+    "• تشابلي كباب (9.99 جنيه إسترليني) - قرص لحم مفروم بالأعشاب التقليدية.\n"
+    "• رانجا جوشت (19.99 جنيه إسترليني) - كاري لحم متبل وعطري.\n"
+    "• بانو بولاو (15.99 جنيه إسترليني) - أرز ولحم عطري.\n"
+    "• لحم مخبوز (94.99 جنيه إسترليني) - لحم مخبوز ببطء مع نكهات عطرية.\n\n"
+    "الحلويات\n"
+    "• بقلاوة (6.99 جنيه إسترليني) - جلاش فاخر مع مكسرات وقطر.\n"
+    "• كنافة (6.99 جنيه إسترليني) - عجينة كنافة مع جبنة ذائبة وقطر.\n\n"
+    "المشروبات\n"
+    "• شاي تركي (3.50 جنيه إسترليني)، شاي إنجليزي (3.50 جنيه إسترليني)\n"
+    "• كرك (4.00 جنيه إسترليني)، كابوتشينو (4.50 جنيه إسترليني)\n"
+    "• موكتيلات (6.99 جنيه إسترليني): كريستال بلو، تروبي كولادا، روبي مينت، ميلون تويست، ليموناضة.\n\n"
+    "هل تود أن أضيف أي شيء إلى سلة التسوق الخاصة بك؟"
+)
+
 RESP_FULL_MENU = (
     "Our full menu at IYI Dining is a curated selection of authentic flavours:\n\n"
     "COLD MEZZE\n"
@@ -249,8 +318,7 @@ RESP_FULL_MENU = (
     "SALADS\n"
     "• Tabbouleh (£7.99) - Parsley, mint, and bulgur salad.\n"
     "• Yogurt and Cucumber Salad (£6.99) - Refreshing yoghurt with garlic.\n"
-    "• Fattoush (£9.99) - Crisp vegetables with toasted flatbread.\n\n"
-    "MAIN COURSES (GRILLS & CURRIES)\n"
+    "• Fattoush (£9.99) - Crisp vegetables with toasted flatbread.\n"
     "• Lamb Ribs (£25.99) - Slow-cooked succulent ribs.\n"
     "• Prawns Tikka (£25.99) - Marinated and grilled prawns.\n"
     "• Chicken Kebab Barg (£15.99) - Marinated chicken breast.\n"
@@ -274,6 +342,19 @@ RESP_FULL_MENU = (
     "Would you like me to add anything to your cart?"
 )
 
+RESP_STARTER_MENU_AR = (
+    "مقبلاتنا مثالية للمشاركة. إليك القائمة الكاملة:\n\n"
+    "المقبلات الباردة\n"
+    "• حمص بالدجاج (5.00 جنيه إسترليني)، حمص بالأفوكادو واللحم (8.99 جنيه إسترليني)، حمص بالأفوكادو والدجاج (7.00 جنيه إسترليني)\n"
+    "• حمص بالأفوكادو سادة (7.00 جنيه إسترليني)، حمص سادة (6.00 جنيه إسترليني)، حمص باللحم (9.99 جنيه إسترليني)\n\n"
+    "المقبلات الساخنة\n"
+    "• شوربة الفطر (8.00 جنيه إسترليني)، كبة (19.99 جنيه إسترليني)، شوربة الدجاج (7.99 جنيه إسترليني)، شوربة العدس (9.99 جنيه إسترليني)\n"
+    "• لحم بعجين (6.99 جنيه إسترليني)، أجنحة دجاج (15.99 جنيه إسترليني)، فلافل (9.99 جنيه إسترليني)\n\n"
+    "السلطات\n"
+    "• تبولة (7.99 جنيه إسترليني)، سلطة الزبادي والخيار (6.99 جنيه إسترليني)، فتوش (9.99 جنيه إسترليني)\n\n"
+    "هل أجهز لك أحد هذه الأطباق؟"
+)
+
 RESP_STARTER_MENU = (
     "Our Starters are perfect for sharing. Here is the complete list:\n\n"
     "COLD MEZZE\n"
@@ -286,7 +367,13 @@ RESP_STARTER_MENU = (
     "• Tabbouleh (£7.99), Yogurt and Cucumber Salad (£6.99), Fattoush (£9.99)\n\n"
     "Shall I prepare one of these for you?"
 )
+
 # (Mains, Drinks, Desserts sections simplified for logic flow but complete in data)
+RESP_MAIN_MENU_AR = "تشمل تشكيلة الأطباق الرئيسية لدينا مشاوينا الشهيرة (ريش غنم، قطع لحم، شيش، أضنة، وشيش دجاج، أضنة، أجنحة) وإضافات IYI الخاصة مثل رانجا جوشت وبانو بولاو، ولحمنا المخبوز الممتاز. تتراوح الأسعار من 9.99 جنيه إسترليني إلى 94.99 جنيه إسترليني. أي منها تود أن أصفه لك؟"
 RESP_MAIN_MENU = "Our main course selection includes our famous Grills (Lamb Ribs, Chops, Shish, Adana and Chicken Shish, Adana, Wings) and IYI Specials like Ranjha Gosht and Bannu Pulao, and our premium Baked Meat. Prices range from £9.99 to £94.99. Which one shall I describe for you?"
+
+RESP_DRINKS_MENU_AR = "نقدم مجموعة متنوعة من المشروبات بما في ذلك الشاي التركي (3.50 جنيه إسترليني)، الشاي الإنجليزي (3.50 جنيه إسترليني)، شاي الكرك (4.00 جنيه إسترليني)، الكابوتشينو (4.50 جنيه إسترليني)، ومجموعة من الموكتيلات المنعشة مثل كريستال بلو وروبي مينت مقابل (6.99 جنيه إسترليني). هل يمكنني اقتراح مشروب؟"
 RESP_DRINKS_MENU = "We offer a variety of beverages including Turkish Tea (£3.50), English Tea (£3.50), Karak Chai (£4.00), Cappuccino (£4.50), and a selection of refreshing Mocktails like Crystal Blue and Ruby Mint for (£6.99). Can I suggest a drink?"
+
+RESP_DESSERTS_MENU_AR = "اختم وجبتك بحلوياتنا التقليدية: البقلاوة (6.99 جنيه إسترليني) أو الكنافة الدافئة بالجبنة (6.99 جنيه إسترليني). كلاهما لذيذ للغاية!"
 RESP_DESSERTS_MENU = "Finish your meal with our traditional desserts: Baklava (£6.99) or the warm, cheesy Künefe (£6.99). They are both delightful!"

@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "@pixiv/three-vrm": "^3.4.5",
+    "simple-keyboard": "^3.8.111",
+    "simple-keyboard-layouts": "^3.4.167",
     "three": "^0.182.0"
   }
 }

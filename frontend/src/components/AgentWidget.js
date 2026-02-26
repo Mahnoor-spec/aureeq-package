@@ -1,6 +1,18 @@
 import { API_BASE_URL } from '../config';
+console.log("Aureeq Debug: AgentWidget.js Loaded at " + new Date().toISOString() + " | API_BASE_URL=" + API_BASE_URL);
+import Keyboard from 'simple-keyboard';
+import 'simple-keyboard/build/css/index.css';
+import arabicLayout from 'simple-keyboard-layouts/build/layouts/arabic';
 
 export function AgentWidget() {
+  const currentLanguage = localStorage.getItem('aureeq_language') || 'en';
+  const user = JSON.parse(localStorage.getItem('aureeq_user') || '{}');
+  const name = user.name || 'Guest';
+
+  const welcomeText = currentLanguage === 'ar'
+    ? `مرحباً ${name}، أنا أورِيق مساعدك الشخصي. كيف يمكنني مساعدتك اليوم؟`
+    : `Hello ${name}, I am Aureeq your personal assistant. How may I help you today?`;
+
   return `
     <!-- Large Horizontal Dashboard Container -->
     <div class="relative w-full max-w-[1100px] h-[700px] rounded-2xl overflow-hidden shadow-2xl border border-brand-gold/10 flex bg-[#0a0a0a] mx-auto my-8 font-sans">
@@ -52,8 +64,10 @@ export function AgentWidget() {
                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                </button>
              </div>
-             <div id="welcome-message-text" class="bg-[#1a1a1a] border-x border-b border-white/5 text-slate-100 text-[15px] px-5 py-3 rounded-b-xl shadow-2xl leading-[1.5] font-normal font-inter msg-content">
-               Hello I am AUREEQ your personal assistant, How may I help you today?
+             <div id="welcome-message-text" 
+                  class="bg-[#1a1a1a] border-x border-b border-white/5 text-slate-100 text-[15px] px-5 py-3 rounded-b-xl shadow-2xl leading-[1.5] font-normal font-inter msg-content"
+                  ${currentLanguage === 'ar' ? 'dir="rtl"' : ''}>
+               ${welcomeText}
              </div>
           </div>
         </div>
@@ -72,6 +86,11 @@ export function AgentWidget() {
           <button id="send-btn" class="w-12 h-12 rounded-xl bg-brand-gold/80 flex items-center justify-center shadow-lg shadow-brand-gold/20 hover:bg-brand-gold transition-all group shrink-0 backdrop-blur-md">
             <svg class="w-5 h-5 text-black group-hover:translate-x-0.5 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
           </button>
+        </div>
+
+        <!-- Virtual Keyboard Container -->
+        <div id="keyboard-container" class="hidden flex-shrink-0 px-8 pb-3 pointer-events-auto pr-[30%] w-full z-40">
+            <div class="simple-keyboard text-black bg-white/95 rounded-xl overflow-hidden shadow-2xl border border-brand-gold/50"></div>
         </div>
       </div>
 
@@ -130,18 +149,114 @@ export function AgentWidget() {
         </div>
       </div>
 
+      <!-- 5. Language Selection Modal -->
+      <div id="language-modal" class="absolute inset-0 z-[105] bg-black/80 backdrop-blur-md flex items-center justify-center hidden">
+        <div class="max-w-[400px] w-full bg-[#111] border border-brand-gold/20 rounded-2xl p-8 shadow-[0_0_50px_rgba(212,175,55,0.15)] animate-fade-in text-center">
+          <div class="text-brand-gold text-4xl font-black mb-6 tracking-tighter">AUREEQ</div>
+          <h3 class="text-white text-xl font-bold mb-8">Select Your Language<br/><span class="text-brand-gold font-normal text-lg mt-2 block">اختر لغتك</span></h3>
+          <div class="flex flex-col gap-4">
+            <button id="lang-ar-btn" class="w-full h-14 bg-brand-gold hover:bg-[#c4a034] text-black font-black text-lg rounded-xl shadow-lg shadow-brand-gold/20 transition-all uppercase tracking-widest active:scale-95">
+              العربية (Arabic)
+            </button>
+            <button id="lang-en-btn" class="w-full h-14 bg-white/5 hover:bg-white/10 text-white/90 font-bold text-sm rounded-xl transition-all uppercase tracking-widest border border-white/5">
+              English
+            </button>
+          </div>
+        </div>
+      </div>
+
     </div>
   `;
 }
 
 export function setupAgentInteraction(avatarRenderer) {
   // Session is now persisted across reloads
-  // localStorage.removeItem('aureeq_user_name');
-  // localStorage.removeItem('aureeq_user_email');
 
   const input = document.getElementById('chat-input');
   const sendBtn = document.getElementById('send-btn');
   const messagesContainer = document.getElementById('chat-messages');
+
+  let currentLanguage = localStorage.getItem('aureeq_language');
+  let keyboard = null;
+
+  // Language Setup Logic
+  const langModal = document.getElementById('language-modal');
+
+  const applyLanguage = (lang) => {
+    currentLanguage = lang;
+    localStorage.setItem('aureeq_language', lang);
+    if (langModal) langModal.classList.add('hidden');
+
+    const kbdContainer = document.getElementById('keyboard-container');
+    const msgArea = document.getElementById('chat-messages');
+
+    if (lang === 'ar') {
+      if (kbdContainer) kbdContainer.classList.remove('hidden');
+      if (msgArea) msgArea.style.marginBottom = '20px';
+      if (welcomeTextEl) welcomeTextEl.setAttribute('dir', 'rtl');
+
+      if (!keyboard) {
+        keyboard = new Keyboard({
+          onChange: inputTxt => { input.value = inputTxt; },
+          onKeyPress: button => {
+            if (button === "{enter}") handleSend();
+          },
+          layout: arabicLayout.layout,
+          theme: "hg-theme-default",
+          display: {
+            "{bksp}": "مسح",
+            "{enter}": "إرسال",
+            "{space}": "مسافة",
+            "{tab}": "Tab",
+            "{lock}": "Caps",
+            "{shift}": "Shift"
+          }
+        });
+
+        // Custom CSS for better virtual keyboard styling
+        const style = document.createElement('style');
+        style.innerHTML = `
+          .simple-keyboard { padding: 10px; background: rgba(255,255,255,0.95); border-radius: 12px; }
+          .hg-button { color: #000 !important; font-weight: bold !important; font-size: 16px !important; }
+          .hg-button-enter { background-color: #d4af37 !important; color: black !important; border: none !important; }
+        `;
+        document.head.appendChild(style);
+      }
+    } else {
+      if (kbdContainer) kbdContainer.classList.add('hidden');
+      if (msgArea) msgArea.style.marginBottom = '0px';
+      if (welcomeTextEl) welcomeTextEl.removeAttribute('dir');
+    }
+
+    // NEW: Update welcome message text instantly for "quick" feel
+    const welcomeTextEl = document.getElementById('welcome-message-text');
+    if (welcomeTextEl) {
+      const user = JSON.parse(localStorage.getItem('aureeq_user') || '{}');
+      const name = user.name || 'Guest';
+      welcomeTextEl.textContent = lang === 'ar'
+        ? `مرحباً ${name}، أنا أورِيق مساعدك الشخصي. كيف يمكنني مساعدتك اليوم؟`
+        : `Hello ${name}, I am Aureeq your personal assistant. How may I help you today?`;
+    }
+  };
+
+  const initLanguage = () => {
+    if (!currentLanguage) {
+      if (langModal) langModal.classList.remove('hidden');
+    } else {
+      applyLanguage(currentLanguage);
+      checkOnboarding();
+    }
+  };
+
+  document.getElementById('lang-en-btn')?.addEventListener('click', () => { applyLanguage('en'); checkOnboarding(); });
+  document.getElementById('lang-ar-btn')?.addEventListener('click', () => { applyLanguage('ar'); checkOnboarding(); });
+
+  // Sync virtual keyboard with physical input
+  if (input) {
+    input.addEventListener("input", (e) => {
+      if (keyboard) keyboard.setInput(e.target.value);
+    });
+  }
 
   // Logic for Logout Button
   const logoutBtn = document.getElementById('logout-btn');
@@ -151,6 +266,7 @@ export function setupAgentInteraction(avatarRenderer) {
         localStorage.removeItem('aureeq_user_name');
         localStorage.removeItem('aureeq_user_email');
         localStorage.removeItem('aureeq_user_prefs');
+        localStorage.removeItem('aureeq_language');
         location.reload(); // Reload to trigger onboarding check
       }
     });
@@ -158,33 +274,33 @@ export function setupAgentInteraction(avatarRenderer) {
 
   // --- LUXURY ORDER POPUP UI ---
   const modalHtml = `
-    <div id="order-modal" class="hidden absolute inset-0 z-[200] bg-black/80 backdrop-blur-md flex items-center justify-center p-6 animate-fade-in pointer-events-auto">
-        <div class="bg-[#121212] border border-brand-gold/20 rounded-[2rem] p-8 w-full max-w-sm shadow-[0_0_50px_rgba(212,175,55,0.15)] transform scale-100 transition-all flex flex-col items-center">
-            
-            <!-- Food Icon Container -->
-            <div class="w-20 h-20 bg-brand-gold/10 rounded-full flex items-center justify-center mb-6 shadow-inner border border-brand-gold/10">
-                <img src="https://img.icons8.com/ios-filled/50/d4af37/restaurant.png" class="w-10 h-10 object-contain" id="modal-icon-img" alt="Order" />
-            </div>
-            
-            <h3 class="text-white text-2xl font-black mb-1 tracking-tight" id="modal-title">Confirm Order</h3>
-            <p class="text-white/50 text-xs uppercase tracking-widest mb-8" id="modal-subtitle">Would you like to add this to your cart?</p>
+          <div id="order-modal" class="hidden absolute inset-0 z-[200] bg-black/80 backdrop-blur-md flex items-center justify-center p-6 animate-fade-in pointer-events-auto">
+            <div class="bg-[#121212] border border-brand-gold/20 rounded-[2rem] p-8 w-full max-w-sm shadow-[0_0_50px_rgba(212,175,55,0.15)] transform scale-100 transition-all flex flex-col items-center">
 
-            <!-- Item Display Row -->
-            <div class="bg-[#1a1a1a] border border-white/5 rounded-2xl p-5 w-full flex justify-between items-center mb-10 shadow-inner">
+              <!-- Food Icon Container -->
+              <div class="w-20 h-20 bg-brand-gold/10 rounded-full flex items-center justify-center mb-6 shadow-inner border border-brand-gold/10">
+                <img src="https://img.icons8.com/ios-filled/50/d4af37/restaurant.png" class="w-10 h-10 object-contain" id="modal-icon-img" alt="Order" />
+              </div>
+
+              <h3 class="text-white text-2xl font-black mb-1 tracking-tight" id="modal-title">Confirm Order</h3>
+              <p class="text-white/50 text-xs uppercase tracking-widest mb-8" id="modal-subtitle">Would you like to add this to your cart?</p>
+
+              <!-- Item Display Row -->
+              <div class="bg-[#1a1a1a] border border-white/5 rounded-2xl p-5 w-full flex justify-between items-center mb-10 shadow-inner">
                 <span id="modal-item-name" class="text-white font-bold text-lg tracking-tight">Item Name</span>
                 <span id="modal-item-price" class="text-brand-gold font-black text-lg">£0.00</span>
-            </div>
+              </div>
 
-            <!-- Action Buttons -->
-            <div class="flex gap-4 w-full">
+              <!-- Action Buttons -->
+              <div class="flex gap-4 w-full">
                 <button id="modal-cancel-btn" class="flex-1 h-14 bg-white/5 hover:bg-white/10 text-white/70 font-bold text-sm rounded-2xl transition-all uppercase tracking-widest border border-white/5">
-                    Cancel
+                  Cancel
                 </button>
                 <button id="modal-confirm-btn" class="flex-1 h-14 bg-brand-gold hover:bg-[#c4a034] text-black font-black text-sm rounded-2xl shadow-lg shadow-brand-gold/20 transition-all uppercase tracking-widest active:scale-95">
-                    Add to Cart
+                  Add to Cart
                 </button>
+              </div>
             </div>
-        </div>
     </div>`;
 
   // Inject if not present
@@ -206,7 +322,7 @@ export function setupAgentInteraction(avatarRenderer) {
 
     // Clean price string for display if needed
     let displayPrice = price;
-    if (!displayPrice.toString().startsWith('£')) displayPrice = `£${displayPrice}`;
+    if (!displayPrice.toString().startsWith('£')) displayPrice = `£${displayPrice} `;
 
     modalName.textContent = name;
     modalPrice.textContent = displayPrice;
@@ -375,7 +491,7 @@ export function setupAgentInteraction(avatarRenderer) {
       const res = await fetch(`${API_BASE_URL}/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text, user_id: user.email, context: context, user_metadata: user, was_voice: wasVoice })
+        body: JSON.stringify({ message: text, user_id: user.email, context: context, user_metadata: user, was_voice: wasVoice, language: currentLanguage || 'en' })
       });
 
       if (!res.ok) {
@@ -441,7 +557,7 @@ export function setupAgentInteraction(avatarRenderer) {
               fetch(fullAudioUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ text: finalMessage })
+                body: JSON.stringify({ text: finalMessage, language: currentLanguage || 'en' })
               })
                 .then(r => r.arrayBuffer())
                 .then(async buffer => {
@@ -642,34 +758,54 @@ export function setupAgentInteraction(avatarRenderer) {
       if (name && email) {
         localStorage.setItem('aureeq_user_name', name);
         localStorage.setItem('aureeq_user_email', email);
+
+        // Instant UI Update
+        const welcomeTextEl = document.getElementById('welcome-message-text');
+        if (welcomeTextEl) {
+          welcomeTextEl.textContent = currentLanguage === 'ar'
+            ? `مرحباً ${name}، أنا أورِيق مساعدك الشخصي. كيف يمكنني مساعدتك اليوم؟`
+            : `Hello ${name}, I am Aureeq your personal assistant. How may I help you today?`;
+        }
+
         checkOnboarding();
         initWelcome(name);
       }
     };
   }
 
-  const isOnboarded = checkOnboarding();
+  const isOnboarded = checkOnboarding(true); // pass true to just check without showing modal, wait for lang init
   const initWelcome = async (name) => {
     try {
       const user = getStoredUser();
       const userName = name || user.name || "Guest";
 
-      console.log("Initializing welcome for:", userName);
+      console.log("Initializing welcome for:", userName, "| URL:", `${API_BASE_URL}/welcome`);
 
-      const res = await fetch(`${API_BASE_URL}/welcome?name=${encodeURIComponent(userName)}&user_id=${encodeURIComponent(user.email || "")}`);
+      const welcomeTextEl = document.getElementById('welcome-message-text');
+
+      const res = await fetch(`${API_BASE_URL}/welcome?name=${encodeURIComponent(userName)}&user_id=${encodeURIComponent(user.email || "")}&language=${currentLanguage || 'en'}`).catch(err => {
+        console.error("Fetch Error caught:", err);
+        // Don't overwrite hardcoded greeting unless it's a critical error
+        return null;
+      });
+
+      if (!res) return;
       const data = await res.json();
+      console.log("Welcome Response data:", data);
 
-      if (data.response) {
-        const welcomeTextEl = document.getElementById('welcome-message-text');
-        if (welcomeTextEl) welcomeTextEl.textContent = data.response;
+      if (data.response && welcomeTextEl) {
+        welcomeTextEl.textContent = data.response;
       }
 
       if (data.audio_url) {
         const fullWelcomeUrl = resolveAudioUrl(data.audio_url);
         const playBtn = document.getElementById('welcome-play-btn');
 
+        if (playBtn) playBtn.classList.remove('hidden');
+
         const playAudio = async () => {
           try {
+            console.log("Playing welcome audio:", fullWelcomeUrl);
             if (window.avatarFunctions && window.avatarFunctions.speakFromUrl) {
               await window.avatarFunctions.speakFromUrl(fullWelcomeUrl);
             } else {
@@ -693,8 +829,34 @@ export function setupAgentInteraction(avatarRenderer) {
     }
   };
 
-  if (isOnboarded) {
-    // Small delay to ensure everything is loaded
+  // Replace checkOnboarding function to wait for language selection
+  const checkOnboardingFinal = () => {
+    const user = getStoredUser();
+    if (!user.email || !user.name) {
+      if (modal) modal.classList.remove('hidden');
+      return false;
+    }
+    if (modal) modal.classList.add('hidden');
+    // Start welcome message only if directly onboarded
     setTimeout(() => initWelcome(), 1000);
-  }
+    return true;
+  };
+
+  // Re-define checkOnboarding inline for events
+  window.checkOnboarding = () => {
+    if (!currentLanguage) return false;
+
+    const user = getStoredUser();
+    if (!user.email || !user.name) {
+      if (modal) modal.classList.remove('hidden');
+      return false;
+    }
+    if (modal) modal.classList.add('hidden');
+    // Start welcome message
+    setTimeout(() => initWelcome(), 1000);
+    return true;
+  };
+
+  // Initialize sequence
+  initLanguage();
 }
