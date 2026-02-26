@@ -6,8 +6,7 @@ import arabicLayout from 'simple-keyboard-layouts/build/layouts/arabic';
 
 export function AgentWidget() {
   const currentLanguage = localStorage.getItem('aureeq_language') || 'en';
-  const user = JSON.parse(localStorage.getItem('aureeq_user') || '{}');
-  const name = user.name || 'Guest';
+  const name = localStorage.getItem('aureeq_user_name') || 'Guest';
 
   const welcomeText = currentLanguage === 'ar'
     ? `مرحباً <bdi>${name}</bdi>، أنا AUREEQ مساعدك الشخصي. كيف يمكنني مساعدتك اليوم؟`
@@ -65,7 +64,7 @@ export function AgentWidget() {
                </button>
              </div>
              <div id="welcome-message-text" 
-                  class="bg-[#1a1a1a] border-x border-b border-white/5 text-slate-100 text-[15px] px-5 py-3 rounded-b-xl shadow-2xl leading-[1.5] font-normal font-inter msg-content"
+                  class="bg-[#1a1a1a] border-x border-b border-white/5 text-slate-100 text-[15px] px-5 py-3 rounded-b-xl shadow-2xl leading-[1.5] font-normal font-inter msg-content ${currentLanguage === 'ar' ? 'text-right' : ''}"
                   ${currentLanguage === 'ar' ? 'dir="rtl"' : ''}>
                ${welcomeText}
              </div>
@@ -193,7 +192,7 @@ export function setupAgentInteraction(avatarRenderer) {
     if (lang === 'ar') {
       if (kbdContainer) kbdContainer.classList.remove('hidden');
       if (msgArea) msgArea.style.marginBottom = '20px';
-      if (welcomeTextEl) welcomeTextEl.setAttribute('dir', 'rtl');
+      // if (welcomeTextEl) welcomeTextEl.setAttribute('dir', 'rtl'); // This line is now handled by the class addition below
 
       if (!keyboard) {
         keyboard = new Keyboard({
@@ -225,7 +224,7 @@ export function setupAgentInteraction(avatarRenderer) {
     } else {
       if (kbdContainer) kbdContainer.classList.add('hidden');
       if (msgArea) msgArea.style.marginBottom = '0px';
-      if (welcomeTextEl) welcomeTextEl.removeAttribute('dir');
+      // if (welcomeTextEl) welcomeTextEl.removeAttribute('dir'); // This line is now handled by the class removal below
     }
 
     // NEW: Update welcome message text instantly for "quick" feel
@@ -235,6 +234,14 @@ export function setupAgentInteraction(avatarRenderer) {
       welcomeTextEl.textContent = lang === 'ar'
         ? `مرحباً ${name}، أنا AUREEQ مساعدك الشخصي. كيف يمكنني مساعدتك اليوم؟`
         : `Hello ${name}, I am AUREEQ your personal assistant. How may I help you today?`;
+
+      if (lang === 'ar') {
+        welcomeTextEl.classList.add('text-right');
+        welcomeTextEl.setAttribute('dir', 'rtl');
+      } else {
+        welcomeTextEl.classList.remove('text-right');
+        welcomeTextEl.removeAttribute('dir');
+      }
     }
   };
 
@@ -427,7 +434,7 @@ export function setupAgentInteraction(avatarRenderer) {
         .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="text-brand-gold underline hover:text-yellow-400 break-all">$1</a>');
 
       div.innerHTML = `
-                <div class="max-w-[85%] ${currentLanguage === 'ar' ? 'mr-0 ml-auto' : ''}">
+                <div class="max-w-[85%]">
                   <div class="bg-brand-gold text-black text-[11px] font-bold px-4 py-1 rounded-t-xl w-full tracking-[0.2em] uppercase ${currentLanguage === 'ar' ? 'text-right' : ''}">AUREEQ</div>
                   <div class="bg-[#1a1a1a] border-x border-b border-white/5 text-slate-100 text-[15px] px-5 py-3 rounded-b-xl shadow-2xl leading-[1.5] font-normal font-inter msg-content" 
                        ${currentLanguage === 'ar' ? 'dir="rtl" style="text-align: right;"' : ''}>${displayText}</div>
@@ -801,20 +808,25 @@ export function setupAgentInteraction(avatarRenderer) {
         const fullWelcomeUrl = resolveAudioUrl(data.audio_url);
         const playBtn = document.getElementById('welcome-play-btn');
 
-        if (playBtn) playBtn.classList.remove('hidden');
+        if (playBtn) {
+          playBtn.classList.remove('hidden');
+          playBtn.onclick = () => playAudio();
+        }
 
         const playAudio = async () => {
           try {
-            console.log("Playing welcome audio:", fullWelcomeUrl);
+            console.log("Attempting to play welcome audio:", fullWelcomeUrl);
+
             if (window.avatarFunctions && window.avatarFunctions.speakFromUrl) {
               await window.avatarFunctions.speakFromUrl(fullWelcomeUrl);
             } else {
               const audio = new Audio(fullWelcomeUrl);
               await audio.play();
             }
+            // Hide play button if playing successfully
             if (playBtn) playBtn.classList.add('hidden');
           } catch (e) {
-            console.warn("Auto-play blocked, showing play button:", e);
+            console.warn("Audio playback issue (likely auto-play block):", e);
             if (playBtn) {
               playBtn.classList.remove('hidden');
               playBtn.onclick = () => playAudio();
@@ -822,6 +834,7 @@ export function setupAgentInteraction(avatarRenderer) {
           }
         };
 
+        // Attempt auto-play
         playAudio();
       }
     } catch (e) {

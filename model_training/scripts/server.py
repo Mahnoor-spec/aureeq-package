@@ -143,36 +143,35 @@ class TTSRequest(BaseModel):
 async def health_check():
     return {"status": "ok"}
 
-# Fix for 404 on Welcome
 @app.get("/api/welcome")
 @app.get("/welcome")
 async def welcome_endpoint(name: str, user_id: str = "guest", language: str = "en"):
     """Generate welcome message and audio"""
     if language == 'ar':
-        text = f"مرحباً {name}، أنا أورِيق مساعدك الشخصي. كيف يمكنني مساعدتك اليوم؟"
+        # exact syntax requested by user for display
+        response_text = f"مرحباً {name}، أنا AUREEQ مساعدك الشخصي. كيف يمكنني مساعدتك اليوم؟"
+        # Spoken text uses Arabic for brand name to ensure proper TTS pronunciation
+        spoken_text = f"مرحباً {name}، أنا أورِيق مساعدك الشخصي. كيف يمكنني مساعدتك اليوم؟"
     else:
-        text = f"Hello {name}, I am Aureeq your personal assistant. How may I help you today?"
+        response_text = f"Hello {name}, I am AUREEQ your personal assistant. How may I help you today?"
+        spoken_text = response_text
         
     print(f"DEBUG: Generating welcome text [{language}]", flush=True)
     
     # Save to memory to ensure history_len > 0 for Turn 1
     if ENGINE:
-        ENGINE.save_to_memory(user_id, "[Onboarding]", text)
+        ENGINE.save_to_memory(user_id, "[Onboarding]", response_text)
     
     audio_b64 = None
     if HTTP_CLIENT:
         try:
             remote_url = f"{TTS_HOST_URL}/generate"
-            if language == 'ar':
-                voice = "am_adam"  # Arabic Male voice (using AM_ADAM model with 'ar' lang)
-                lang_code = "ar"
-            else:
-                voice = os.getenv("TTS_VOICE", "bm_george")
-                lang_code = "en-gb"
-            
-            payload = {"text": text, "voice": voice, "lang": lang_code}
-            
-            resp = await HTTP_CLIENT.post(remote_url, json=payload)
+            payload = {
+                "text": spoken_text,
+                "voice": "am_adam" if language == 'ar' else "af_sky",
+                "lang_code": "ar" if language == 'ar' else "en-us"
+            }
+            resp = await HTTP_CLIENT.post(remote_url, json=payload, timeout=15)
             if resp.status_code == 200:
                 b64 = base64.b64encode(resp.content).decode('utf-8')
                 audio_b64 = f"data:audio/wav;base64,{b64}"
@@ -181,7 +180,7 @@ async def welcome_endpoint(name: str, user_id: str = "guest", language: str = "e
         except Exception as e:
             print(f"Welcome Audio Generation Failed: {e}")
 
-    return JSONResponse({"response": text, "audio_url": audio_b64})
+    return JSONResponse({"response": response_text, "audio_url": audio_b64})
 
 @app.post("/api/chat")
 @app.post("/chat")
@@ -243,15 +242,15 @@ async def tts_endpoint(request: TTSRequest):
     try:
         remote_url = f"{TTS_HOST_URL}/generate"
         if request.language == 'ar':
-            voice = "af_nicole" # Or specific Arabic Kokoro voice available
-            lang_code = "en-us"
+            voice = "am_adam"
+            lang_code = "ar"
         else:
             voice = os.getenv("TTS_VOICE", "bm_george")
             lang_code = "en-gb"
             
         payload = {"text": request.text, "voice": voice, "lang": lang_code}
         
-        resp = await HTTP_CLIENT.post(remote_url, json=payload)
+        resp = await HTTP_CLIENT.post(remote_url, json=payload, timeout=15)
         if resp.status_code == 200:
             return StreamingResponse(resp.iter_bytes(), media_type="audio/wav")
         else:
