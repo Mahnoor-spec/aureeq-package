@@ -297,6 +297,11 @@ export function setupAgentInteraction(avatarRenderer) {
                 <span id="modal-item-price" class="text-brand-gold font-black text-lg">£0.00</span>
               </div>
 
+              <!-- Dish Image -->
+              <div id="modal-dish-image-container" class="hidden mb-6 flex justify-center">
+                <img id="modal-dish-image" src="" alt="dish preview" class="w-48 h-48 object-cover rounded-3xl border-2 border-brand-gold/20 shadow-xl shadow-black/40" />
+              </div>
+
               <!-- Action Buttons -->
               <div class="flex gap-4 w-full">
                 <button id="modal-cancel-btn" class="flex-1 h-14 bg-white/5 hover:bg-white/10 text-white/70 font-bold text-sm rounded-2xl transition-all uppercase tracking-widest border border-white/5">
@@ -323,6 +328,14 @@ export function setupAgentInteraction(avatarRenderer) {
   const modalConfirm = document.getElementById('modal-confirm-btn');
   const modalCancel = document.getElementById('modal-cancel-btn');
 
+  // Global helper for card clicks
+  window.triggerOrder = (name, price, wp_id) => {
+    console.log("Triggering order from card:", name);
+    if (typeof showOrderPopup === 'function') {
+      showOrderPopup(name, price, false, wp_id);
+    }
+  };
+
   const showOrderPopup = (name, price, isRemove = false, wp_id = '') => {
     if (!orderModal) return;
 
@@ -337,6 +350,18 @@ export function setupAgentInteraction(avatarRenderer) {
     const modalSubtitle = document.getElementById('modal-subtitle');
     const modalConfirmBtn = document.getElementById('modal-confirm-btn');
     const modalIconImg = document.getElementById('modal-icon-img');
+
+    const modalDishImage = document.getElementById('modal-dish-image');
+    const modalDishImageContainer = document.getElementById('modal-dish-image-container');
+
+    // Image Lookup
+    const menuItem = menuData.find(m => m.wp_id === wp_id || m.name.toLowerCase() === name.toLowerCase());
+    if (menuItem && menuItem.image) {
+      modalDishImage.src = menuItem.image;
+      modalDishImageContainer.classList.remove('hidden');
+    } else {
+      modalDishImageContainer.classList.add('hidden');
+    }
 
     if (isRemove) {
       modalTitle.textContent = "Remove Item";
@@ -411,6 +436,8 @@ export function setupAgentInteraction(avatarRenderer) {
       let displayText = text;
       const orderMatch = text.match(/\[ORDER:\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)?\]/i);
       const removeMatch = text.match(/\[REMOVE:\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)?\]/i);
+      const idMatch = text.match(/\[ID:\s*(.*?)\]/i);
+      const cardMatch = text.match(/\[CARD:\s*(.*?)\]/i);
 
       if (orderMatch) {
         const name = orderMatch[1].trim();
@@ -424,12 +451,25 @@ export function setupAgentInteraction(avatarRenderer) {
         const wp_id = (removeMatch[3] || "").trim();
         displayText = text.replace(removeMatch[0], '').trim();
         setTimeout(() => showOrderPopup(name, price, true, wp_id), 800);
+      } else if (idMatch || cardMatch) { // Handle [ID: item_id] or [CARD: item_id]
+        const itemId = (idMatch ? idMatch[1] : cardMatch[1]).trim();
+        displayText = text.replace(idMatch ? idMatch[0] : cardMatch[0], '').trim();
+
+        // Find the menu item by wp_id
+        const menuItem = menuData.find(m => m.wp_id === itemId);
+        if (menuItem && typeof window.triggerProductCard === 'function') {
+          setTimeout(() => window.triggerProductCard(menuItem.name, menuItem.price, menuItem.wp_id, menuItem.image), 800);
+        } else {
+          console.warn(`Product card for item ID ${itemId} not found or triggerProductCard not available.`);
+        }
       }
 
       // Support Markdown links and newlines in static messages + Tag stripping
       displayText = displayText
         .replace(/\[ORDER:\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)?\]/gi, '')
         .replace(/\[REMOVE:\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)?\]/gi, '')
+        .replace(/\[ID:\s*(.*?)\]/gi, '')
+        .replace(/\[CARD:\s*(.*?)\]/gi, '')
         .replace(/\n/g, "<br/>")
         .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="text-brand-gold underline hover:text-yellow-400 break-all">$1</a>');
 
@@ -449,16 +489,17 @@ export function setupAgentInteraction(avatarRenderer) {
 
   const playAureeqVoice = async (url, textForFallback = "") => {
     const fullAudioUrl = resolveAudioUrl(url);
-    console.log("Aureeq Voice Playback Request:", fullAudioUrl);
+    console.log("Aureeq Voice Playback Request:", fullAudioUrl, "WithText:", textForFallback ? "Yes" : "No");
 
     try {
-      // Always try avatar first for lipsync
-      if (window.avatarFunctions && window.avatarFunctions.speakFromUrl) {
+      // If text is provided, we MUST use our POST proxy to generate TTS
+      // avatarFunctions.speakFromUrl only supports GET, so we use fallback path here
+      if (!textForFallback && window.avatarFunctions && window.avatarFunctions.speakFromUrl) {
         await window.avatarFunctions.speakFromUrl(fullAudioUrl);
         return true;
       }
 
-      // Fallback: Fetch and Speak (handles streamed or static URLs)
+      // Fallback/POST Path: Fetch and Speak (handles streamed or static URLs)
       const fetchBody = textForFallback ? JSON.stringify({ text: textForFallback, language: currentLanguage || 'en' }) : null;
       const res = await fetch(fullAudioUrl, {
         method: textForFallback ? 'POST' : 'GET',
@@ -513,6 +554,17 @@ export function setupAgentInteraction(avatarRenderer) {
 
   let isVoiceInputSource = false;
 
+  let menuData = []; // Local cache for images and prices
+
+  const fetchMenu = async () => {
+    try {
+      const res = await fetch(`${API_BASE_URL}/menu`);
+      if (res.ok) menuData = await res.json();
+      console.log("Menu Data Loaded for UI:", menuData.length, "items");
+    } catch (e) { console.error("Menu fetch failed:", e); }
+  };
+
+  fetchMenu();
   const handleSend = async () => {
     const text = input.value.trim();
     if (!text) return;
@@ -527,6 +579,7 @@ export function setupAgentInteraction(avatarRenderer) {
     input.value = '';
 
     const user = getStoredUser();
+
 
     import('../lib/salesAgent').then(async ({ SalesAgent }) => {
       // Assemble context using RAG/etc on client side helper if needed, 
@@ -590,6 +643,8 @@ export function setupAgentInteraction(avatarRenderer) {
               const cleanText = finalMessage
                 .replace(/\[ORDER:\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)?\]/gi, '')
                 .replace(/\[REMOVE:\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)?\]/gi, '')
+                .replace(/\[ID:\s*(.*?)\]/gi, '')
+                .replace(/\[CARD:\s*(.*?)\]/gi, '')
                 .replace(/&/g, "&amp;")
                 .replace(/</g, "&lt;")
                 .replace(/>/g, "&gt;")
@@ -597,43 +652,80 @@ export function setupAgentInteraction(avatarRenderer) {
                 .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="text-brand-gold underline hover:text-yellow-400 break-all">$1</a>');
 
               contentEl.innerHTML = cleanText;
-
-              // Play Audio using robust unified helper
-              playAureeqVoice(audioUrlPath, finalMessage);
-
-              // Check for tags in the final message of an audio response
-              const orderMatch = finalMessage.match(/\[ORDER:\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)?\]/i);
-              const removeMatch = finalMessage.match(/\[REMOVE:\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)?\]/i);
-              if (orderMatch) {
-                const name = orderMatch[1].trim();
-                const price = orderMatch[2].trim();
-                const wp_id = (orderMatch[3] || "").trim();
-                setTimeout(() => showOrderPopup(name, price, false, wp_id), 800);
-              } else if (removeMatch) {
-                const name = removeMatch[1].trim();
-                const price = removeMatch[2].trim();
-                const wp_id = (removeMatch[3] || "").trim();
-                setTimeout(() => showOrderPopup(name, price, true, wp_id), 800);
-              }
-
-              break;
+            } else { // Otherwise, just show the text before the audio tag for now
+              contentEl.innerHTML = messagePart
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/\n/g, "<br/>")
+                .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="text-brand-gold underline hover:text-yellow-400 break-all">$1</a>');
             }
+          } else {
+            // Normal message streaming
+            contentEl.innerHTML = fullText
+              .replace(/\[ID:\s*(.*?)\]/gi, '')
+              .replace(/\[CARD:\s*(.*?)\]/gi, '')
+              .replace(/&/g, "&amp;")
+              .replace(/</g, "&lt;")
+              .replace(/>/g, "&gt;")
+              .replace(/\n/g, "<br/>")
+              .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="text-brand-gold underline hover:text-yellow-400 break-all">$1</a>');
           }
-          // --- END AUDIO TAG PARSING ---
-
-          // Simple Markdown Link Converter + Tag Stripper
-          const safeText = fullText
-            .replace(/\[ORDER:\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)?\]/gi, '')
-            .replace(/\[REMOVE:\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)?\]/gi, '')
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/\n/g, "<br/>")
-            .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="text-brand-gold underline hover:text-yellow-400 break-all">$1</a>');
-
-          contentEl.innerHTML = safeText;
           messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
+
+        // AFTER STREAM COMPLETE: Play audio if detected
+        if (fullText.includes("|AUDIO_URL|")) {
+          const parts = fullText.split("|AUDIO_URL|");
+          const audioParts = parts[1].split("|TEXT|");
+          if (audioParts.length > 1) {
+            const audioUrlPath = audioParts[0];
+            const finalMessage = audioParts[1];
+            console.log("Triggering playback for complete stream response.");
+            playAureeqVoice(audioUrlPath, finalMessage);
+          }
+        }
+
+        // NEW: Show Product Card for recommendations
+        const currentLang = localStorage.getItem('aureeq_language') || 'en';
+        menuData.forEach(item => {
+          const itemName = item.name.toLowerCase();
+          const itemID = item.id.toLowerCase();
+
+          // 1. Check for explicit [ID: item_id] tag (MOST RELIABLE)
+          const hasIDTag = fullText.toLowerCase().includes(`[id: ${itemID}]`) || fullText.toLowerCase().includes(`[card: ${itemID}]`);
+
+          // 2. Fallback to space-normalized name matching
+          const normalizedFullText = fullText.toLowerCase().replace(/\s+/g, ' ');
+          const normalizedItemName = itemName.replace(/\s+/g, ' ');
+          const hasNameMatch = normalizedFullText.includes(normalizedItemName);
+
+          if ((hasIDTag || hasNameMatch) && item.image) {
+            // Ensure we haven't already shown a card for this item in this message
+            if (!contentEl.querySelector(`[data-item-id="${item.id}"]`)) {
+              const cardHtml = `
+                    <div data-item-id="${item.id}" class="mt-4 overflow-hidden bg-[#121212] border border-white/10 rounded-2xl flex items-center animate-fade-in group hover:bg-[#1a1a1a] transition-all ${currentLang === 'ar' ? 'flex-row-reverse' : ''}">
+                       <img src="${item.image}" class="w-24 h-24 object-cover border-r border-white/10 ${currentLang === 'ar' ? 'border-l border-r-0' : ''}" />
+                       <div class="px-5 py-3 flex-1 ${currentLang === 'ar' ? 'text-right' : 'text-left'}">
+                          <h4 class="text-brand-gold font-bold text-[10px] uppercase tracking-widest opacity-60 mb-0.5">${item.category}</h4>
+                          <h3 class="text-white font-black text-base leading-tight tracking-tight">${item.name}</h3>
+                          <div class="flex items-center justify-between mt-2">
+                             <p class="text-brand-gold font-black text-lg">£${item.price}</p>
+                             <button onclick="window.triggerOrder('${item.name.replace(/'/g, "\\'")}', '${item.price}', '${item.wp_id}')" 
+                                     class="px-4 py-1.5 bg-brand-gold/10 hover:bg-brand-gold text-brand-gold hover:text-black rounded-lg text-[10px] font-black uppercase transition-all border border-brand-gold/20 hover:border-transparent active:scale-95">
+                                ${currentLang === 'ar' ? 'أضف للسلة' : 'Add to Cart'}
+                             </button>
+                          </div>
+                       </div>
+                    </div>
+                 `;
+              const cardContainer = document.createElement('div');
+              cardContainer.innerHTML = cardHtml;
+              contentEl.appendChild(cardContainer.firstElementChild);
+              messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+          }
+        });
 
         if (!hasTokens || !fullText.trim()) {
           contentEl.textContent = "The brain is cooling down. Please try again.";

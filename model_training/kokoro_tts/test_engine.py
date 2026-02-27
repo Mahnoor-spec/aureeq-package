@@ -11,9 +11,11 @@ try:
     engine = Kokoro(MODEL_PATH, VOICES_PATH)
     print("Engine initialized successfully!")
     
-    print("Testing Arabic generation with am_adam...")
-    samples, sample_rate = engine.create("مرحباً", voice="am_adam", speed=1.0, lang="ar")
-    print(f"Success! Generated {len(samples)} samples at {sample_rate}Hz")
+    variations = ["أورِيق", "أوريق", "أُوريق", "أوريك", "أوريج"]
+    for v in variations:
+        print(f"Testing variation: {v}")
+        samples, sample_rate = engine.create(f"أنا {v}", voice="am_adam", speed=1.0, lang="ar")
+        print(f"Success for {v}! Generated {len(samples)} samples")
     
 except Exception as e:
     import traceback

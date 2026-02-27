@@ -61,8 +61,8 @@ class StreamingEngine:
         elif intent == "HARDCODED_MENU_DESSERT":
             full_response = rules.RESP_DESSERTS_MENU if language == 'en' else rules.RESP_DESSERTS_MENU_AR
         elif intent == "HARDCODED_MENU_SEARCH":
-            keywords = ["lamb", "chicken", "beef", "prawn", "vegetarian", "veg", "vegan"]
-            target = next((k for k in keywords if k in message.lower()), "food")
+            keywords = ["lamb", "chicken", "beef", "prawn", "vegetarian", "veg", "vegan", "meat"]
+            target = next((k for k in keywords if k in search_query.lower()), "food")
             matches = [item for item in self.phi.menu_data if target in item['name'].lower() or target in item.get('description', '').lower()]
             if matches:
                 resp = f"Here are our {target.capitalize()} options from across the menu:\n\n"
@@ -77,7 +77,7 @@ class StreamingEngine:
                         price = i.get('price', 'N/A')
                         if "baked meat" in i.get('name', '').lower() and price in ['N/A', None, '']:
                             price = "94.99"
-                        resp += f"• {i.get('name', 'Unknown Item')} (£{price})\n"
+                        resp += f"• {i.get('name', 'Unknown Item')} (£{price}) [ID: {i.get('id')}]\n"
                     resp += "\n"
                 resp += "Would you like to try any of these?"
                 full_response = resp

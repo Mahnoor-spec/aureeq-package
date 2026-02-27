@@ -36,9 +36,9 @@ class LlamaHandler:
         menu_list = ""
         for item in menu_context:
             price = item.get('price', '0.00')
-            # Fix pricing for baked meat if needed (special case from previous code)
             if "baked meat" in item.get('name', '').lower(): price = "94.99"
-            menu_list += f"- {item['name']} (£{price}): {item.get('description', '')}\n"
+            # Include ID for robust internal matching
+            menu_list += f"- {item['name']} (ID: {item['id']}, Price: £{price}): {item.get('description', '')}\n"
 
         if is_gadget_query:
             # For gadgets, we use the template from rules if defined, or a simplified one here.
@@ -56,7 +56,7 @@ class LlamaHandler:
             )
 
         if language == 'ar':
-            system_prompt += "\n\nCRITICAL INSTRUCTION: You MUST write your ultimate response entirely in Arabic. The user's input might be in English or Arabic, but your answer to them MUST be in Arabic. Translate the menu options naturally while maintaining the same polite, high-quality sales assistant persona."
+            system_prompt += "\n\nCRITICAL INSTRUCTION: You MUST write your ultimate response entirely in Arabic. The user's input might be in English or Arabic, but your answer to them MUST be in Arabic. \n\nIMPORTANT FOR IMAGE MATCHING: When mentioning specific dishes, always include their tag like this: [ID: item_id]. This allows the system to show the correct picture. You should also keep the English name in brackets if it helps the user. Example: 'أقترح عليك تجربة كباب شيش الدجاج (Chicken Shish Kebab) [ID: chicken_shish_kebab]'."
 
         messages = [{"role": "system", "content": system_prompt}] + history + [{"role": "user", "content": query}]
         print(f"DEBUG LLAMA PROMPT: {system_prompt[:250]}...", flush=True)
@@ -79,6 +79,6 @@ class LlamaHandler:
                         clean_content = content.replace("*", "").replace("#", "")
                         if clean_content: yield clean_content
         except Exception as e:
-            print(f"Llama Handler Error: {e}")
+            print(f"Llama Handler Error: {e}", flush=True)
             traceback.print_exc()
             raise e

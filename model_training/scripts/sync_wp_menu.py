@@ -5,7 +5,7 @@ import re
 from typing import List, Dict
 
 # Configuration
-SITE_URL = "https://carnivore.kematconsulting.co.uk"
+SITE_URL = "https://iyi.kematconsulting.co.uk"
 # WooCommerce Store API (Public)
 WP_API_URL = f"{SITE_URL}/wp-json/wc/store/products?per_page=100"
 DATA_DIR = os.path.join(os.path.dirname(__file__), "../data")
@@ -58,6 +58,10 @@ async def sync_menu():
         cats = p.get('categories', [])
         category = cats[0].get('name', 'General') if cats else 'General'
         
+        # IMAGE EXTRACTION: Get the first image URL
+        images = p.get('images', [])
+        image_url = images[0].get('src', '') if images else ''
+        
         item = {
             "id": generate_id(name),
             "wp_id": str(p.get('id', '')),
@@ -65,6 +69,7 @@ async def sync_menu():
             "price": price_str,
             "description": desc,
             "category": category,
+            "image": image_url,
             "tags": [category.lower()]
         }
         menu_items.append(item)

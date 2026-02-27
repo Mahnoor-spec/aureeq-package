@@ -4,7 +4,7 @@ import asyncio
 import traceback
 import uuid
 import base64
-from typing import Optional, List, Dict
+from typing import Optional, List, Dict, Union
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, HTTPException, Request, Body
@@ -14,9 +14,18 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import httpx
 from dotenv import load_dotenv
+import edge_tts
+import io
+import re
+import sys
+
+# Fix encoding for Windows console
+if sys.platform == "win32":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 # Load environment variables
-load_dotenv()
+env_path = os.path.join(os.path.dirname(__file__), "../../.env")
+load_dotenv(env_path, override=True)
 
 # Import Modular components
 import order_db
@@ -128,6 +137,74 @@ app.add_middleware(
 ENGINE: Optional[StreamingEngine] = None
 HTTP_CLIENT: Optional[httpx.AsyncClient] = None
 
+def split_text_by_language(text: str):
+    """
+    Splits text into Arabic and English segments.
+    Merges adjacent segments of the same voice to ensure smooth TTS flow.
+    """
+    # Split by blocks of Arabic characters (including common Arabic punctuation)
+    parts = re.split(r'([\u0600-\u06FF\u060C\u061B\u061F]+)', text)
+    
+    raw_segments = []
+    current_voice = "ar-SA-HamedNeural"
+    
+    for p in parts:
+        if not p:
+            continue
+            
+        has_arabic = any('\u0600' <= c <= '\u06FF' for c in p)
+        has_english = any(c.isalpha() and ord(c) < 128 for c in p)
+        has_numbers = any(c.isdigit() for c in p)
+        
+        if has_arabic:
+            voice = "ar-SA-HamedNeural"
+        elif has_english or has_numbers:
+            voice = "en-GB-ThomasNeural"
+        else:
+            voice = current_voice
+            
+        raw_segments.append((p, voice))
+        current_voice = voice
+        
+    # MERGE adjacent segments with same voice for flow
+    if not raw_segments:
+        return []
+        
+    merged = []
+    curr_text, curr_voice = raw_segments[0]
+    
+    for next_text, next_voice in raw_segments[1:]:
+        if next_voice == curr_voice:
+            curr_text += next_text
+        else:
+            merged.append((curr_text, curr_voice))
+            curr_text, curr_voice = next_text, next_voice
+            
+    merged.append((curr_text, curr_voice))
+    return merged
+
+async def generate_edge_audio(text: str, default_voice: str) -> Optional[bytes]:
+    """Generate audio using edge-tts. Supports multi-voice splitting for both AR and EN."""
+    try:
+        # Always use splitting to ensure correct pronunciation of mixed terms
+        segments = split_text_by_language(text)
+
+        combined_audio = b""
+        for seg_text, voice in segments:
+            # Skip segments that are purely whitespace or punctuation (Edge TTS failure avoided)
+            if not any(c.isalnum() for c in seg_text):
+                continue
+                
+            communicate = edge_tts.Communicate(seg_text, voice)
+            async for chunk in communicate.stream():
+                if chunk["type"] == "audio":
+                    combined_audio += chunk["data"]
+        
+        return combined_audio if combined_audio else None
+    except Exception as e:
+        print(f"Edge TTS Generation Failed: {e}")
+        return None
+
 class ChatRequest(BaseModel):
     message: str
     user_id: str
@@ -148,10 +225,10 @@ async def health_check():
 async def welcome_endpoint(name: str, user_id: str = "guest", language: str = "en"):
     """Generate welcome message and audio"""
     if language == 'ar':
-        # exact syntax requested by user for display
+        # Display uses English brand name as requested
         response_text = f"مرحباً {name}، أنا AUREEQ مساعدك الشخصي. كيف يمكنني مساعدتك اليوم؟"
-        # Spoken text uses Arabic for brand name to ensure proper TTS pronunciation
-        spoken_text = f"مرحباً {name}، أنا أورِيق مساعدك الشخصي. كيف يمكنني مساعدتك اليوم؟"
+        # Spoken text now ALSO uses English for AUREEQ and name to trigger the UK voice splitter
+        spoken_text = f"مرحباً {name}، أنا AUREEQ مساعدك الشخصي. كيف يمكنني مساعدتك اليوم؟"
     else:
         response_text = f"Hello {name}, I am AUREEQ your personal assistant. How may I help you today?"
         spoken_text = response_text
@@ -165,20 +242,42 @@ async def welcome_endpoint(name: str, user_id: str = "guest", language: str = "e
     audio_b64 = None
     if HTTP_CLIENT:
         try:
-            remote_url = f"{TTS_HOST_URL}/generate"
-            payload = {
-                "text": spoken_text,
-                "voice": "am_adam" if language == 'ar' else "af_sky",
-                "lang_code": "ar" if language == 'ar' else "en-us"
-            }
-            resp = await HTTP_CLIENT.post(remote_url, json=payload, timeout=30)
-            if resp.status_code == 200:
-                b64 = base64.b64encode(resp.content).decode('utf-8')
+            # FORCE ARABIC DETECTION: If text contains Arabic, use Arabic voice/lang
+            has_arabic = any('\u0600' <= c <= '\u06FF' for c in spoken_text)
+            
+            # Use Native Voices via Edge TTS (SA Male for Arabic, UK Male for English)
+            if language == 'ar' or has_arabic:
+                native_voice = "ar-SA-HamedNeural"
+                native_lang = "ar"
+            else:
+                native_voice = "en-GB-ThomasNeural"
+                native_lang = "en-gb"
+
+            print(f"DEBUG: Multi-Voice Greeting Request: {native_voice} ({native_lang})", flush=True)
+            
+            # Try Native Edge TTS first
+            edge_audio = await generate_edge_audio(spoken_text, native_voice)
+            if edge_audio:
+                b64 = base64.b64encode(edge_audio).decode('utf-8')
                 audio_b64 = f"data:audio/wav;base64,{b64}"
             else:
-                print(f"TTS Greeting Failed with status {resp.status_code}")
+                # Fallback to Local Kokoro if Edge fails
+                print(f"DEBUG: Edge TTS Failed, falling back to Kokoro", flush=True)
+                # Fallback: am_adam for AR (approx), bm_george for UK (exact accent)
+                effective_voice = "am_adam" if (language == 'ar' or has_arabic) else "bm_george"
+                effective_lang = "ar" if (language == 'ar' or has_arabic) else "en-gb"
+                
+                remote_url = f"{TTS_HOST_URL}/generate"
+                payload = {"text": spoken_text, "voice": effective_voice, "lang": effective_lang}
+                resp = await HTTP_CLIENT.post(remote_url, json=payload, timeout=30)
+                if resp.status_code == 200:
+                    b64 = base64.b64encode(resp.content).decode('utf-8')
+                    audio_b64 = f"data:audio/wav;base64,{b64}"
+                else:
+                    print(f"TTS Greeting Fallback Failed with status {resp.status_code}")
         except Exception as e:
             print(f"Welcome Audio Generation Failed: {e}")
+            traceback.print_exc()
 
     return JSONResponse({"response": response_text, "audio_url": audio_b64})
 
@@ -232,28 +331,65 @@ async def chat_endpoint(request: ChatRequest):
 
     return StreamingResponse(generate_and_stream(), media_type="text/event-stream")
 
+@app.get("/api/menu")
+@app.get("/menu")
+async def get_menu():
+    """Return the loaded menu data including image URLs."""
+    if not ENGINE or not ENGINE.rag:
+        raise HTTPException(status_code=503, detail="Menu not loaded")
+    return ENGINE.rag.menu_data
+
+@app.get("/api/tts")
+@app.get("/tts")
 @app.post("/api/tts")
 @app.post("/tts")
-async def tts_endpoint(request: TTSRequest):
-    """Proxy to the actual TTS engine"""
+async def tts_endpoint(request_data: Union[TTSRequest, dict] = None, text: str = None, language: str = None):
+    """Proxy to the actual TTS engine. Supports POST with body or GET with query params."""
     if not HTTP_CLIENT:
         raise HTTPException(status_code=503, detail="HTTP Client not ready")
         
+    # Extract data from either POST body or GET query params
+    if text: # Likely GET
+        req_text = text
+        req_lang = language or "en"
+    elif isinstance(request_data, TTSRequest):
+        req_text = request_data.text
+        req_lang = request_data.language
+    else:
+        raise HTTPException(status_code=400, detail="Missing text for TTS")
+
     try:
-        remote_url = f"{TTS_HOST_URL}/generate"
-        if request.language == 'ar':
+        # FORCE ARABIC DETECTION
+        has_arabic = any('\u0600' <= c <= '\u06FF' for c in req_text)
+        
+        # Use Native Voices via Edge TTS (SA Male for Arabic, UK Male for English)
+        if req_lang == 'ar' or has_arabic:
+            native_voice = "ar-SA-HamedNeural"
+        else:
+            native_voice = "en-GB-ThomasNeural"
+            
+        print(f"DEBUG: Multi-Voice Proxy Request: {native_voice}", flush=True)
+
+        # Try Native Edge TTS first
+        edge_audio = await generate_edge_audio(req_text, native_voice)
+        if edge_audio:
+            return StreamingResponse(io.BytesIO(edge_audio), media_type="audio/wav")
+        
+        # Fallback to Local Kokoro if Edge fails
+        if req_lang == 'ar' or has_arabic:
             voice = "am_adam"
             lang_code = "ar"
         else:
-            voice = os.getenv("TTS_VOICE", "bm_george")
+            voice = "bm_george" # UK Male fallback
             lang_code = "en-gb"
             
-        payload = {"text": request.text, "voice": voice, "lang": lang_code}
-        
-        resp = await HTTP_CLIENT.post(remote_url, json=payload, timeout=15)
+        remote_url = f"{TTS_HOST_URL}/generate"
+        payload = {"text": req_text, "voice": voice, "lang": lang_code}
+        resp = await HTTP_CLIENT.post(remote_url, json=payload, timeout=30)
         if resp.status_code == 200:
             return StreamingResponse(resp.iter_bytes(), media_type="audio/wav")
         else:
+            print(f"TTS Proxy Failed with status {resp.status_code}: {resp.text}")
             raise HTTPException(status_code=resp.status_code, detail="TTS Generation Failed")
     except Exception as e:
         print(f"TTS Proxy Error: {e}")
